@@ -422,23 +422,62 @@ footer{background:var(--brine-deep);border-top:1px solid rgba(61,107,101,0.2);pa
     <div class="intake-form">
       <h3>Tell us about your situation</h3>
       <p>We'll review your submission and reach out within one business day. All information is kept strictly confidential.</p>
-      <div class="form-grid">
-        <div class="form-group"><label>First Name</label><input type="text" placeholder="Your first name"></div>
-        <div class="form-group"><label>Last Name</label><input type="text" placeholder="Your last name"></div>
-        <div class="form-group"><label>Email</label><input type="email" placeholder="your@email.com"></div>
-        <div class="form-group"><label>I am a...</label>
-          <select><option value="">Select one</option><option>Employee navigating a workplace situation</option><option>HR professional seeking peer consultation</option></select>
+      <form id="individual-form" action="https://formspree.io/f/mdaqpnjq" method="POST">
+        <div class="form-grid">
+          <div class="form-group"><label>First Name</label><input type="text" name="first_name" placeholder="Your first name" required></div>
+          <div class="form-group"><label>Last Name</label><input type="text" name="last_name" placeholder="Your last name"></div>
+          <div class="form-group"><label>Email</label><input type="email" name="email" placeholder="your@email.com" required></div>
+          <div class="form-group"><label>I am a...</label>
+            <select name="client_type"><option value="">Select one</option><option>Employee navigating a workplace situation</option><option>HR professional seeking peer consultation</option></select>
+          </div>
+          <div class="form-group full"><label>What's going on?</label><textarea name="situation" placeholder="Share as much or as little as you're comfortable with. All submissions are confidential."></textarea></div>
+          <div class="form-group"><label>Engagement Type</label>
+            <select name="engagement_type"><option value="">Select one</option><option>Ad Hoc — one question or situation</option><option>Project-Based — ongoing support</option></select>
+          </div>
+          <div class="form-group"><label>Preferred Contact Method</label>
+            <select name="contact_method"><option value="">Select one</option><option>Email</option><option>Phone call</option><option>Video call</option></select>
+          </div>
         </div>
-        <div class="form-group full"><label>What's going on?</label><textarea placeholder="Share as much or as little as you're comfortable with. All submissions are confidential."></textarea></div>
-        <div class="form-group"><label>Engagement Type</label>
-          <select><option value="">Select one</option><option>Ad Hoc — one question or situation</option><option>Project-Based — ongoing support</option></select>
+        <button id="individual-submit" class="btn-primary" type="submit" style="margin-top:0.5rem;">Submit — We'll Be in Touch</button>
+        <div id="individual-success" style="display:none;margin-top:1rem;padding:1rem;background:rgba(61,107,101,0.15);border:1px solid rgba(61,107,101,0.4);border-radius:2px;">
+          <p style="font-size:13px;color:#8A9E9A;font-weight:400;">Thank you — your submission is confidential and we'll be in touch within one business day.</p>
         </div>
-        <div class="form-group"><label>Preferred Contact Method</label>
-          <select><option value="">Select one</option><option>Email</option><option>Phone call</option><option>Video call</option></select>
+        <div id="individual-error" style="display:none;margin-top:1rem;padding:1rem;background:rgba(180,60,60,0.1);border:1px solid rgba(180,60,60,0.3);border-radius:2px;">
+          <p style="font-size:13px;color:#c07a7a;font-weight:400;">Something went wrong. Please try again or email us at contact@vennpeopleco.com</p>
         </div>
-      </div>
-      <button class="btn-primary" style="margin-top:0.5rem;">Submit — We'll Be in Touch</button>
-      <p style="font-size:11px;color:var(--bone-dark);margin-top:1rem;font-style:italic;">This service does not constitute legal advice. All information shared is confidential.</p>
+        <p style="font-size:11px;color:var(--bone-dark);margin-top:1rem;font-style:italic;">This service does not constitute legal advice. All information shared is confidential.</p>
+      </form>
+      <script>
+        document.getElementById('individual-form').addEventListener('submit', async function(e) {
+          e.preventDefault();
+          var btn = document.getElementById('individual-submit');
+          var success = document.getElementById('individual-success');
+          var error = document.getElementById('individual-error');
+          btn.textContent = 'Sending...';
+          btn.disabled = true;
+          success.style.display = 'none';
+          error.style.display = 'none';
+          try {
+            var res = await fetch(this.action, {
+              method: 'POST',
+              body: new FormData(this),
+              headers: {'Accept': 'application/json'}
+            });
+            if (res.ok) {
+              success.style.display = 'block';
+              this.reset();
+              btn.textContent = 'Submit — We\'ll Be in Touch';
+              btn.disabled = false;
+            } else {
+              throw new Error('Server error');
+            }
+          } catch(err) {
+            error.style.display = 'block';
+            btn.textContent = 'Submit — We\'ll Be in Touch';
+            btn.disabled = false;
+          }
+        });
+      </script>
     </div>
   </div>
 </section>
@@ -549,14 +588,49 @@ footer{background:var(--brine-deep);border-top:1px solid rgba(61,107,101,0.2);pa
       </div>
       <div class="company-form">
         <h3>Book a free consultation</h3>
-        <div class="cf-group"><label>Your Name</label><input type="text" placeholder="Full name"></div>
-        <div class="cf-group"><label>Company / Organization</label><input type="text" placeholder="Where do you work?"></div>
-        <div class="cf-group"><label>Email</label><input type="email" placeholder="your@company.com"></div>
-        <div class="cf-group"><label>What brings you here?</label>
-          <select><option value="">Select one</option><option>Ad Hoc Support</option><option>Project-Based Engagement</option><option>Fractional CHRO</option><option>Not sure yet — let's talk</option></select>
-        </div>
-        <div class="cf-group"><label>Tell us more (optional)</label><textarea placeholder="A brief description of your situation or what you're looking for..."></textarea></div>
-        <button class="btn-primary" style="width:100%;text-align:center;">Request a Consultation</button>
+        <form id="company-form" action="https://formspree.io/f/mwvgweza" method="POST">
+          <div class="cf-group"><label>Your Name</label><input type="text" name="name" placeholder="Full name" required></div>
+          <div class="cf-group"><label>Company / Organization</label><input type="text" name="company" placeholder="Where do you work?"></div>
+          <div class="cf-group"><label>Email</label><input type="email" name="email" placeholder="your@company.com" required></div>
+          <div class="cf-group"><label>What brings you here?</label>
+            <select name="engagement_type"><option value="">Select one</option><option>Ad Hoc Support</option><option>Project-Based Engagement</option><option>Fractional CHRO</option><option>Not sure yet — let's talk</option></select>
+          </div>
+          <div class="cf-group"><label>Tell us more (optional)</label><textarea name="message" placeholder="A brief description of your situation or what you're looking for..."></textarea></div>
+          <button id="company-submit" class="btn-primary" type="submit" style="width:100%;text-align:center;">Request a Consultation</button>
+          <div id="company-success" style="display:none;margin-top:1rem;padding:1rem;background:rgba(61,107,101,0.15);border:1px solid rgba(61,107,101,0.4);border-radius:2px;">
+            <p style="font-size:13px;color:#8A9E9A;">Thank you — we'll be in touch within one business day.</p>
+          </div>
+          <div id="company-error" style="display:none;margin-top:1rem;padding:1rem;background:rgba(180,60,60,0.1);border:1px solid rgba(180,60,60,0.3);border-radius:2px;">
+            <p style="font-size:13px;color:#c07a7a;">Something went wrong. Please email us at contact@vennpeopleco.com</p>
+          </div>
+        </form>
+        <script>
+        document.getElementById("company-form").addEventListener("submit", async function(e) {
+          e.preventDefault();
+          var btn = document.getElementById("company-submit");
+          var success = document.getElementById("company-success");
+          var error = document.getElementById("company-error");
+          btn.textContent = "Sending...";
+          btn.disabled = true;
+          success.style.display = "none";
+          error.style.display = "none";
+          try {
+            var res = await fetch(this.action, {
+              method: "POST",
+              body: new FormData(this),
+              headers: {"Accept": "application/json"}
+            });
+            if (res.ok) {
+              success.style.display = "block";
+              this.reset();
+            } else { throw new Error(); }
+          } catch(err) {
+            error.style.display = "block";
+          }
+          btn.textContent = "Request a Consultation";
+          btn.disabled = false;
+        });
+        </script>
       </div>
     </div>
   </div>
