@@ -15,20 +15,11 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{
-  --bone:#E8E4DC;
-  --bone-mid:#CFC9BE;
-  --bone-dark:#9A9486;
-  --brine:#3D6B65;
-  --brine-deep:#1E3A37;
-  --brine-dark:#0D1E1C;
-  --stone:#5C4F47;
-  --linen:#F2EFE9;
-  --white:#FFFFFF;
-  --text:#0D1E1C;
-  --text-mid:#3D4A48;
-  --text-muted:#7A8A88;
-  --border:#CFC9BE;
-  --border-light:#E0DDD6;
+  --bone:#E8E4DC;--bone-mid:#CFC9BE;--bone-dark:#9A9486;
+  --brine:#3D6B65;--brine-deep:#1E3A37;--brine-dark:#0D1E1C;
+  --linen:#F2EFE9;--white:#FFFFFF;
+  --text:#0D1E1C;--text-mid:#3D4A48;--text-muted:#7A8A88;
+  --border:#CFC9BE;--border-light:#E0DDD6;
 }
 html{scroll-behavior:smooth;}
 body{font-family:'Inter',sans-serif;color:var(--text);background:var(--linen);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;-webkit-text-size-adjust:100%;text-size-adjust:100%;}
@@ -38,7 +29,6 @@ body{font-family:'Inter',sans-serif;color:var(--text);background:var(--linen);fo
 nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,30,28,0.97);backdrop-filter:blur(8px);border-bottom:1px solid rgba(61,107,101,0.25);}
 .nav-inner{max-width:1200px;margin:0 auto;padding:0 2rem;height:66px;display:flex;align-items:center;justify-content:space-between;}
 .logo-mark{display:flex;align-items:center;gap:12px;text-decoration:none;}
-.logo-svg{flex-shrink:0;}
 .logo-text{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:500;color:var(--bone);letter-spacing:0.02em;}
 .nav-links{display:flex;align-items:center;gap:2rem;list-style:none;}
 .nav-links a{color:var(--bone-mid);text-decoration:none;font-size:12px;font-weight:400;letter-spacing:0.07em;text-transform:uppercase;transition:color 0.2s;}
@@ -55,11 +45,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,30,28,0.9
 .mobile-menu a{padding:1rem 1.5rem;color:var(--bone-mid);text-decoration:none;font-size:13px;font-weight:400;letter-spacing:0.06em;text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,0.05);transition:color 0.2s;-webkit-tap-highlight-color:transparent;}
 .mobile-menu a:hover{color:var(--bone);}
 
-
 /* HERO */
 .hero{min-height:100vh;background:var(--brine-dark);display:flex;align-items:center;padding:120px 2rem 80px;position:relative;overflow:hidden;}
 .hero::before{content:'';position:absolute;top:-30%;right:-15%;width:600px;height:600px;background:radial-gradient(circle,rgba(61,107,101,0.12) 0%,transparent 70%);pointer-events:none;}
-.hero::after{content:'';position:absolute;bottom:-20%;left:-10%;width:400px;height:400px;background:radial-gradient(circle,rgba(232,228,220,0.04) 0%,transparent 70%);pointer-events:none;}
 .hero-inner{max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
 .hero-eyebrow{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--brine);margin-bottom:1.25rem;font-weight:500;}
 .hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(44px,5vw,68px);font-weight:500;line-height:1.1;color:var(--bone);margin-bottom:0.75rem;}
@@ -69,10 +57,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,30,28,0.9
 .hero-btns{display:flex;gap:1rem;flex-wrap:wrap;}
 .btn-primary{background:var(--brine);color:var(--bone);padding:13px 30px;border:none;border-radius:2px;font-size:12px;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background 0.2s,transform 0.15s;display:inline-block;-webkit-tap-highlight-color:transparent;}
 .btn-primary:hover{background:var(--brine-deep);transform:translateY(-1px);}
-.btn-outline{background:transparent;color:var(--bone);padding:12px 30px;border:1px solid rgba(232,228,220,0.25);border-radius:2px;font-size:12px;font-weight:400;letter-spacing:0.07em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:border-color 0.2s,color 0.2s;display:inline-block;}
+.btn-outline{background:transparent;color:var(--bone);padding:12px 30px;border:1px solid rgba(232,228,220,0.25);border-radius:2px;font-size:12px;font-weight:400;letter-spacing:0.07em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:border-color 0.2s,color 0.2s;display:inline-block;-webkit-tap-highlight-color:transparent;}
 .btn-outline:hover{border-color:var(--brine);color:var(--bone-mid);}
 .hero-right{display:flex;flex-direction:column;gap:1rem;}
-.path-card{background:rgba(232,228,220,0.04);border:1px solid rgba(232,228,220,0.1);border-radius:3px;padding:1.75rem 2rem;text-decoration:none;transition:border-color 0.2s,background 0.2s;}
+.path-card{background:rgba(232,228,220,0.04);border:1px solid rgba(232,228,220,0.1);border-radius:3px;padding:1.75rem 2rem;text-decoration:none;transition:border-color 0.2s,background 0.2s;-webkit-tap-highlight-color:transparent;}
 .path-card:hover{border-color:rgba(61,107,101,0.5);background:rgba(61,107,101,0.05);}
 .path-label{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--brine);margin-bottom:0.5rem;font-weight:500;}
 .path-card h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:500;color:var(--bone);margin-bottom:0.4rem;}
@@ -110,7 +98,6 @@ section{padding:100px 2rem;}
 .btn-dark{background:var(--brine-dark);color:var(--bone);padding:11px 26px;border:none;border-radius:2px;font-size:11px;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background 0.2s;display:inline-block;}
 .btn-dark:hover{background:var(--brine-deep);}
 
-
 /* SERVICES */
 #services{background:var(--linen);}
 .services-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--border-light);border-radius:3px;overflow:hidden;width:100%;}
@@ -119,7 +106,6 @@ section{padding:100px 2rem;}
 .service-item:nth-child(3n){border-right:none;}
 .service-item:nth-last-child(-n+3){border-bottom:none;}
 .service-item:last-child{border-right:none;border-bottom:none;}
-
 .service-tag{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--brine);font-weight:500;margin-bottom:0.6rem;}
 .service-item h3{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;color:var(--brine-dark);margin-bottom:0.4rem;}
 .service-item p{font-size:12px;color:var(--text-mid);line-height:1.65;font-weight:300;}
@@ -137,17 +123,6 @@ section{padding:100px 2rem;}
 .ind-card h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:500;color:var(--bone);margin-bottom:0.4rem;}
 .ind-card p{font-size:13px;color:var(--bone-mid);line-height:1.65;font-weight:300;}
 .ind-detail{font-size:12px;color:var(--bone-dark);font-style:italic;margin-top:0.75rem;}
-.intake-form{background:rgba(232,228,220,0.04);border:1px solid rgba(61,107,101,0.3);border-radius:3px;padding:2.5rem;margin-top:0.5rem;}
-.intake-form h3{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:500;color:var(--bone);margin-bottom:0.4rem;}
-.intake-form>p{font-size:13px;color:var(--bone-mid);margin-bottom:2rem;font-weight:300;}
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;}
-.form-group{display:flex;flex-direction:column;gap:5px;}
-.form-group.full{grid-column:1/-1;}
-.form-group label{font-size:11px;letter-spacing:0.07em;text-transform:uppercase;color:var(--bone-mid);font-weight:500;}
-.form-group input,.form-group select,.form-group textarea{background:rgba(232,228,220,0.07);border:1px solid rgba(232,228,220,0.15);border-radius:2px;padding:10px 14px;color:var(--bone);font-size:16px;font-family:'Inter',sans-serif;outline:none;transition:border-color 0.2s;-webkit-appearance:none;appearance:none;}
-.form-group select option{background:var(--brine-deep);color:var(--bone);}
-.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--brine);}
-.form-group textarea{resize:vertical;min-height:90px;}
 
 /* ABOUT */
 #about{background:var(--bone);}
@@ -179,33 +154,41 @@ section{padding:100px 2rem;}
 #contact .section-title{color:var(--bone);}
 #contact .section-sub{color:var(--bone-mid);}
 #contact .eyebrow{color:var(--brine);}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
-.contact-info h3{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:500;color:var(--bone);margin-bottom:1rem;line-height:1.25;}
-.contact-info p{font-size:14px;color:var(--bone-mid);line-height:1.75;font-weight:300;margin-bottom:1.75rem;}
-.contact-details{display:flex;flex-direction:column;gap:0.6rem;margin-top:1.5rem;}
-.contact-detail{display:flex;gap:1rem;align-items:baseline;}
-.contact-detail span:first-child{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--brine);font-weight:500;min-width:80px;}
-.contact-detail span:last-child{font-size:13px;color:var(--bone-mid);}
-.company-form{background:rgba(232,228,220,0.04);border:1px solid rgba(61,107,101,0.3);border-radius:3px;padding:2.5rem;}
-.company-form h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:500;color:var(--bone);margin-bottom:1.5rem;}
+.company-form{background:rgba(232,228,220,0.04);border:1px solid rgba(61,107,101,0.3);border-radius:3px;padding:2.5rem;max-width:640px;width:100%;}
+.company-form h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:500;color:var(--bone);margin-bottom:0.5rem;}
+.company-form>p{font-size:13px;color:var(--bone-mid);margin-bottom:1.5rem;font-weight:300;}
 .cf-group{margin-bottom:1rem;}
 .cf-group label{display:block;font-size:11px;letter-spacing:0.07em;text-transform:uppercase;color:var(--bone-mid);font-weight:500;margin-bottom:5px;}
 .cf-group input,.cf-group select,.cf-group textarea{width:100%;background:rgba(232,228,220,0.07);border:1px solid rgba(232,228,220,0.15);border-radius:2px;padding:10px 14px;color:var(--bone);font-size:16px;font-family:'Inter',sans-serif;outline:none;transition:border-color 0.2s;-webkit-appearance:none;appearance:none;}
 .cf-group select option{background:var(--brine-deep);color:var(--bone);}
 .cf-group input:focus,.cf-group select:focus,.cf-group textarea:focus{border-color:var(--brine);}
-.cf-group textarea{resize:vertical;min-height:80px;}
+.cf-group textarea{resize:vertical;min-height:90px;}
 
 /* FOOTER */
-footer{background:var(--brine-deep);border-top:1px solid rgba(61,107,101,0.2);padding:2rem 2rem;}
+footer{background:var(--brine-deep);border-top:1px solid rgba(61,107,101,0.2);padding:2rem;}
 .footer-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
 .footer-logo{font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--bone);font-weight:500;display:flex;align-items:center;gap:10px;}
-.footer-links{display:flex;gap:1.75rem;list-style:none;}
+.footer-links{display:flex;gap:1.75rem;list-style:none;flex-wrap:wrap;}
 .footer-links a{font-size:11px;color:var(--bone-mid);text-decoration:none;letter-spacing:0.07em;text-transform:uppercase;transition:color 0.2s;}
 .footer-links a:hover{color:var(--bone);}
 .footer-copy{font-size:11px;color:var(--bone-dark);}
 .footer-legal{font-size:11px;color:var(--bone-dark);font-style:italic;max-width:1200px;margin:1rem auto 0;padding:0.75rem 0 0;border-top:1px solid rgba(61,107,101,0.1);}
 
-
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hamburger{display:flex;}
+  .nav-links{display:none;}
+  .hero-inner{grid-template-columns:1fr;gap:3rem;}
+  .tiers-grid,.team-grid,.ind-grid{grid-template-columns:1fr;}
+  .services-grid{grid-template-columns:1fr 1fr;}
+  .cases-grid{grid-template-columns:1fr;}
+  .stats-inner{grid-template-columns:repeat(2,1fr);}
+  .team-card{grid-template-columns:1fr;}
+  .company-form{max-width:100% !important;}
+  section{padding:70px 1.5rem;}
+  .stats-bar{padding:1.5rem;}
+  .path-card{padding:1.25rem 1.5rem;}
+}
 @media(max-width:600px){
   .services-grid{grid-template-columns:1fr;border-radius:3px;}
   .service-item{border-right:none !important;border-bottom:1px solid var(--border-light) !important;}
@@ -220,36 +203,32 @@ footer{background:var(--brine-deep);border-top:1px solid rgba(61,107,101,0.2);pa
   .tiers-grid{grid-template-columns:1fr;}
   .cases-grid{grid-template-columns:1fr;}
   .team-photo{width:100%;height:240px;object-fit:cover;object-position:center top;}
-  .tier-card{padding:1.75rem 1.25rem;}
-  .ind-card{padding:1.5rem 1.25rem;}
-  .intake-form{padding:1.5rem 1.25rem;}
-  .company-form{padding:1.5rem 1.25rem !important;}
+  .tier-card,.ind-card,.company-form{padding:1.5rem 1.25rem;}
   .hero{padding:100px 1.25rem 60px;}
   .nav-inner{padding:0 1.25rem;}
   .hero-btns{flex-direction:column;}
   .btn-primary,.btn-outline{text-align:center;width:100%;}
-  .contact-grid{gap:1.5rem !important;}
   .path-card h3{font-size:18px;}
   .case-top h3{font-size:17px;}
   .footer-inner{flex-direction:column;gap:1rem;text-align:center;}
-  .footer-links{flex-wrap:wrap;justify-content:center;gap:1rem;}
+  .footer-links{justify-content:center;gap:1rem;}
+  .ind-grid{grid-template-columns:1fr;}
 }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="nav-inner">
     <a href="#" class="logo-mark">
-      <svg class="logo-svg" width="36" height="36" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg width="36" height="36" viewBox="0 0 48 48" fill="none">
         <rect x="2" y="4" width="26" height="26" stroke="#CFC9BE" stroke-width="1.8" rx="2.5"/>
         <rect x="18" y="16" width="26" height="26" stroke="#8A9E9A" stroke-width="1.8" rx="2.5"/>
         <rect x="18" y="16" width="10" height="14" fill="#8A9E9A" opacity="0.4" rx="1.5"/>
       </svg>
       <span class="logo-text">Venn People Co.</span>
     </a>
-    <ul class="nav-links" id="nav-links">
+    <ul class="nav-links">
       <li><a href="#companies">For Companies</a></li>
       <li><a href="#individuals">For Individuals</a></li>
       <li><a href="#services">Services</a></li>
@@ -272,10 +251,8 @@ footer{background:var(--brine-deep);border-top:1px solid rgba(61,107,101,0.2);pa
 </div>
 <script>
 function toggleMenu(){
-  var m=document.getElementById('mobile-menu');
-  var h=document.getElementById('hamburger');
-  m.classList.toggle('open');
-  h.classList.toggle('open');
+  document.getElementById('mobile-menu').classList.toggle('open');
+  document.getElementById('hamburger').classList.toggle('open');
 }
 function closeMenu(){
   document.getElementById('mobile-menu').classList.remove('open');
@@ -301,13 +278,13 @@ function closeMenu(){
         <p class="path-label">Organizations</p>
         <h3>Build stronger teams and systems.</h3>
         <p>From fractional CHRO leadership to targeted projects — people strategy that scales with your growth.</p>
-        <span class="path-arrow" style="display:block;margin-top:0.5rem;">Get in touch →</span>
+        <span class="path-arrow" style="display:block;margin-top:0.5rem;">Free 30-min consultation →</span>
       </a>
       <a href="#individuals" class="path-card">
         <p class="path-label">Individuals</p>
         <h3>Navigate your workplace with confidence.</h3>
         <p>Whether you're an employee in a difficult situation or an HR professional who needs a thought partner — we're in your corner.</p>
-        <span class="path-arrow">Explore →</span>
+        <span class="path-arrow">Get in touch →</span>
       </a>
     </div>
   </div>
@@ -367,9 +344,6 @@ function closeMenu(){
         </ul>
         <a href="#contact" class="btn-dark">Get a Quote</a>
       </div>
-    </div>
-    
-      <a href="#contact" class="btn-primary">Get in Touch</a>
     </div>
   </div>
 </section>
@@ -435,431 +409,47 @@ function closeMenu(){
         <p>Full-cycle recruiting strategy and execution for high-priority roles across technical, clinical, and operational domains.</p>
         <p class="service-lead">Led by Kasey</p>
       </div>
-    </div>TYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Venn People Co. — Where Strategy and People Meet</title>
-<meta name="description" content="Venn People Co. is a fractional people strategy and enablement consultancy based in Austin, TX. We provide HR leadership, change management, L&D, and organizational design for companies — and confidential guidance for individuals navigating workplace situations.">
-<meta property="og:title" content="Venn People Co. — Where Strategy and People Meet">
-<meta property="og:description" content="Fractional people strategy, HR leadership, and enablement for organizations and individuals. Based in Austin, TX.">
-<meta property="og:url" content="https://vennpeopleco.com">
-<meta name="robots" content="index, follow">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-:root{
-  --bone:#E8E4DC;
-  --bone-mid:#CFC9BE;
-  --bone-dark:#9A9486;
-  --brine:#3D6B65;
-  --brine-deep:#1E3A37;
-  --brine-dark:#0D1E1C;
-  --stone:#5C4F47;
-  --linen:#F2EFE9;
-  --white:#FFFFFF;
-  --text:#0D1E1C;
-  --text-mid:#3D4A48;
-  --text-muted:#7A8A88;
-  --border:#CFC9BE;
-  --border-light:#E0DDD6;
-}
-html{scroll-behavior:smooth;}
-body{font-family:'Inter',sans-serif;color:var(--text);background:var(--linen);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;-webkit-text-size-adjust:100%;text-size-adjust:100%;}
-.serif{font-family:'Cormorant Garamond',serif;}
-
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,30,28,0.97);backdrop-filter:blur(8px);border-bottom:1px solid rgba(61,107,101,0.25);}
-.nav-inner{max-width:1200px;margin:0 auto;padding:0 2rem;height:66px;display:flex;align-items:center;justify-content:space-between;}
-.logo-mark{display:flex;align-items:center;gap:12px;text-decoration:none;}
-.logo-svg{flex-shrink:0;}
-.logo-text{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:500;color:var(--bone);letter-spacing:0.02em;}
-.nav-links{display:flex;align-items:center;gap:2rem;list-style:none;}
-.nav-links a{color:var(--bone-mid);text-decoration:none;font-size:12px;font-weight:400;letter-spacing:0.07em;text-transform:uppercase;transition:color 0.2s;}
-.nav-links a:hover{color:var(--bone);}
-.nav-cta{color:var(--brine) !important;border:1px solid rgba(61,107,101,0.6);padding:7px 18px;border-radius:2px;transition:background 0.2s,color 0.2s !important;}
-.nav-cta:hover{background:var(--brine) !important;color:var(--bone) !important;}
-.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;-webkit-tap-highlight-color:transparent;}
-.hamburger span{display:block;width:22px;height:1.5px;background:var(--bone-mid);transition:all 0.25s;}
-.hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
-.hamburger.open span:nth-child(2){opacity:0;}
-.hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
-.mobile-menu{display:none;position:fixed;top:66px;left:0;right:0;background:rgba(13,30,28,0.99);backdrop-filter:blur(8px);z-index:99;flex-direction:column;border-bottom:1px solid rgba(61,107,101,0.2);}
-.mobile-menu.open{display:flex;}
-.mobile-menu a{padding:1rem 1.5rem;color:var(--bone-mid);text-decoration:none;font-size:13px;font-weight:400;letter-spacing:0.06em;text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,0.05);transition:color 0.2s;-webkit-tap-highlight-color:transparent;}
-.mobile-menu a:hover{color:var(--bone);}
-@media(max-width:900px){
-  .hamburger{display:flex;}
-  .nav-links{display:none;}
-  .hero-inner{grid-template-columns:1fr;gap:3rem;}
-  .tiers-grid,.team-grid,.ind-grid{grid-template-columns:1fr;}
-  .contact-grid{grid-template-columns:1fr !important;}
-  .services-grid{grid-template-columns:1fr 1fr;}
-  .cases-grid{grid-template-columns:1fr;}
-  .stats-inner{grid-template-columns:repeat(2,1fr);}
-  .team-card{grid-template-columns:1fr;}
-  .form-grid{grid-template-columns:1fr;}
-  .industry-bar{flex-direction:column;}
-  .path-card{padding:1.25rem 1.5rem;}
-  section{padding:70px 1.5rem;}
-  .stats-bar{padding:1.5rem;}
-  .company-form{max-width:100% !important;}
-}
-
-/* HERO */
-.hero{min-height:100vh;background:var(--brine-dark);display:flex;align-items:center;padding:120px 2rem 80px;position:relative;overflow:hidden;}
-.hero::before{content:'';position:absolute;top:-30%;right:-15%;width:600px;height:600px;background:radial-gradient(circle,rgba(61,107,101,0.12) 0%,transparent 70%);pointer-events:none;}
-.hero::after{content:'';position:absolute;bottom:-20%;left:-10%;width:400px;height:400px;background:radial-gradient(circle,rgba(232,228,220,0.04) 0%,transparent 70%);pointer-events:none;}
-.hero-inner{max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
-.hero-eyebrow{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--brine);margin-bottom:1.25rem;font-weight:500;}
-.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(44px,5vw,68px);font-weight:500;line-height:1.1;color:var(--bone);margin-bottom:0.75rem;}
-.hero h1 em{font-style:italic;color:var(--bone-mid);}
-.hero-tagline{font-family:'Cormorant Garamond',serif;font-size:18px;font-style:italic;color:var(--brine);margin-bottom:1.5rem;letter-spacing:0.02em;}
-.hero-sub{font-size:16px;color:var(--bone-mid);line-height:1.75;margin-bottom:2.5rem;font-weight:300;max-width:460px;}
-.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;}
-.btn-primary{background:var(--brine);color:var(--bone);padding:13px 30px;border:none;border-radius:2px;font-size:12px;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background 0.2s,transform 0.15s;display:inline-block;-webkit-tap-highlight-color:transparent;}
-.btn-primary:hover{background:var(--brine-deep);transform:translateY(-1px);}
-.btn-outline{background:transparent;color:var(--bone);padding:12px 30px;border:1px solid rgba(232,228,220,0.25);border-radius:2px;font-size:12px;font-weight:400;letter-spacing:0.07em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:border-color 0.2s,color 0.2s;display:inline-block;}
-.btn-outline:hover{border-color:var(--brine);color:var(--bone-mid);}
-.hero-right{display:flex;flex-direction:column;gap:1rem;}
-.path-card{background:rgba(232,228,220,0.04);border:1px solid rgba(232,228,220,0.1);border-radius:3px;padding:1.75rem 2rem;text-decoration:none;transition:border-color 0.2s,background 0.2s;}
-.path-card:hover{border-color:rgba(61,107,101,0.5);background:rgba(61,107,101,0.05);}
-.path-label{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--brine);margin-bottom:0.5rem;font-weight:500;}
-.path-card h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:500;color:var(--bone);margin-bottom:0.4rem;}
-.path-card p{font-size:13px;color:var(--bone-mid);line-height:1.65;font-weight:300;}
-.path-arrow{display:inline-block;margin-top:0.75rem;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--brine);font-weight:500;}
-
-/* STATS */
-.stats-bar{background:var(--brine-deep);border-top:1px solid rgba(61,107,101,0.2);border-bottom:1px solid rgba(61,107,101,0.2);padding:2rem;}
-.stats-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;text-align:center;}
-.stat-num{font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:500;color:var(--bone);line-height:1;}
-.stat-label{font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--brine);margin-top:0.4rem;font-weight:400;}
-
-/* SECTIONS */
-section{padding:100px 2rem;}
-.section-inner{max-width:1200px;margin:0 auto;}
-.eyebrow{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--brine);margin-bottom:0.75rem;font-weight:500;}
-.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,4vw,50px);font-weight:500;line-height:1.15;color:var(--brine-dark);margin-bottom:1rem;}
-.section-sub{font-size:16px;color:var(--text-mid);max-width:560px;line-height:1.75;font-weight:300;margin-bottom:3.5rem;}
-.gold-rule{width:40px;height:1.5px;background:var(--brine);margin:1.25rem 0 2rem;}
-
-/* COMPANIES */
-#companies{background:var(--bone);}
-.tiers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:3rem;}
-.tier-card{background:var(--white);border:1px solid var(--border-light);border-radius:3px;padding:2.25rem 2rem;position:relative;transition:border-color 0.2s;}
-.tier-card:hover{border-color:var(--brine);}
-.tier-card.featured{border-color:var(--brine);border-width:1.5px;}
-.tier-badge{position:absolute;top:-11px;left:2rem;background:var(--brine);color:var(--bone);font-size:10px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;padding:3px 12px;border-radius:2px;}
-.tier-icon{width:36px;height:36px;border:1px solid rgba(61,107,101,0.2);background:rgba(61,107,101,0.06);border-radius:2px;display:flex;align-items:center;justify-content:center;margin-bottom:1.25rem;}
-.tier-icon svg{width:18px;height:18px;stroke:var(--brine);fill:none;stroke-width:1.5;}
-.tier-card h3{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:500;color:var(--brine-dark);margin-bottom:0.4rem;}
-.tier-card p{font-size:13px;color:var(--text-mid);line-height:1.65;margin-bottom:1.25rem;font-weight:300;}
-.tier-features{list-style:none;display:flex;flex-direction:column;gap:0.5rem;margin-bottom:1.75rem;}
-.tier-features li{font-size:12px;color:var(--text-mid);display:flex;align-items:flex-start;gap:8px;}
-.tier-features li::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--brine);margin-top:7px;flex-shrink:0;}
-.btn-dark{background:var(--brine-dark);color:var(--bone);padding:11px 26px;border:none;border-radius:2px;font-size:11px;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;text-decoration:none;cursor:pointer;transition:background 0.2s;display:inline-block;}
-.btn-dark:hover{background:var(--brine-deep);}
-
-
-/* SERVICES */
-#services{background:var(--linen);}
-.services-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--border-light);border-radius:3px;overflow:hidden;width:100%;}
-.service-item{padding:2rem 1.75rem;border-right:1px solid var(--border-light);border-bottom:1px solid var(--border-light);transition:background 0.2s;background:var(--white);}
-.service-item:hover{background:var(--bone);}
-.service-item:nth-child(3n){border-right:none;}
-.service-item:nth-last-child(-n+3){border-bottom:none;}
-.service-item:last-child{border-right:none;border-bottom:none;}
-
-.service-tag{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--brine);font-weight:500;margin-bottom:0.6rem;}
-.service-item h3{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;color:var(--brine-dark);margin-bottom:0.4rem;}
-.service-item p{font-size:12px;color:var(--text-mid);line-height:1.65;font-weight:300;}
-.service-lead{font-size:11px;color:var(--bone-dark);margin-top:0.6rem;font-style:italic;}
-
-/* INDIVIDUALS */
-#individuals{background:var(--brine-dark);}
-#individuals .section-title{color:var(--bone);}
-#individuals .section-sub{color:var(--bone-mid);}
-#individuals .eyebrow{color:var(--brine);}
-.ind-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-bottom:1.5rem;}
-.ind-card{background:rgba(232,228,220,0.04);border:1px solid rgba(232,228,220,0.1);border-radius:3px;padding:2rem;transition:border-color 0.2s;}
-.ind-card:hover{border-color:rgba(61,107,101,0.4);}
-.ind-tag{font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--brine);font-weight:500;margin-bottom:0.6rem;}
-.ind-card h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:500;color:var(--bone);margin-bottom:0.4rem;}
-.ind-card p{font-size:13px;color:var(--bone-mid);line-height:1.65;font-weight:300;}
-.ind-detail{font-size:12px;color:var(--bone-dark);font-style:italic;margin-top:0.75rem;}
-.intake-form{background:rgba(232,228,220,0.04);border:1px solid rgba(61,107,101,0.3);border-radius:3px;padding:2.5rem;margin-top:0.5rem;}
-.intake-form h3{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:500;color:var(--bone);margin-bottom:0.4rem;}
-.intake-form>p{font-size:13px;color:var(--bone-mid);margin-bottom:2rem;font-weight:300;}
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;}
-.form-group{display:flex;flex-direction:column;gap:5px;}
-.form-group.full{grid-column:1/-1;}
-.form-group label{font-size:11px;letter-spacing:0.07em;text-transform:uppercase;color:var(--bone-mid);font-weight:500;}
-.form-group input,.form-group select,.form-group textarea{background:rgba(232,228,220,0.07);border:1px solid rgba(232,228,220,0.15);border-radius:2px;padding:10px 14px;color:var(--bone);font-size:16px;font-family:'Inter',sans-serif;outline:none;transition:border-color 0.2s;-webkit-appearance:none;appearance:none;}
-.form-group select option{background:var(--brine-deep);color:var(--bone);}
-.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--brine);}
-.form-group textarea{resize:vertical;min-height:90px;}
-
-/* ABOUT */
-#about{background:var(--bone);}
-.team-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:3.5rem;}
-.team-card{display:grid;grid-template-columns:150px 1fr;gap:2rem;align-items:start;}
-.team-photo{width:150px;height:190px;object-fit:cover;object-position:center top;border-radius:2px;filter:grayscale(10%);max-width:100%;}
-.team-title{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--brine);font-weight:500;margin-bottom:0.2rem;}
-.team-card h3{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:500;color:var(--brine-dark);margin-bottom:0.2rem;}
-.team-creds{font-size:11px;color:var(--bone-dark);margin-bottom:0.85rem;font-style:italic;}
-.team-bio{font-size:13px;color:var(--text-mid);line-height:1.75;font-weight:300;margin-bottom:0.85rem;}
-.expertise-tags{display:flex;flex-wrap:wrap;gap:5px;}
-.etag{font-size:10px;background:rgba(61,107,101,0.1);color:var(--brine-deep);border:1px solid rgba(61,107,101,0.2);padding:3px 9px;border-radius:2px;font-weight:500;letter-spacing:0.03em;}
-
-/* CASE STUDIES */
-#cases{background:var(--linen);}
-.cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
-.case-card{border:1px solid var(--border-light);border-radius:3px;overflow:hidden;transition:border-color 0.2s;}
-.case-card:hover{border-color:var(--brine);}
-.case-top{background:var(--brine-deep);padding:1.5rem;}
-.case-industry{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--brine);font-weight:500;margin-bottom:0.6rem;}
-.case-top h3{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;color:var(--bone);line-height:1.3;}
-.case-body{padding:1.5rem;background:var(--white);}
-.case-label{font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:var(--bone-dark);margin-bottom:0.35rem;font-weight:500;}
-.case-body p{font-size:12px;color:var(--text-mid);line-height:1.65;font-weight:300;}
-.case-outcome{margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border-light);font-size:12px;color:var(--brine);font-weight:500;font-style:italic;}
-
-/* CONTACT */
-#contact{background:var(--brine-dark);}
-#contact .section-title{color:var(--bone);}
-#contact .section-sub{color:var(--bone-mid);}
-#contact .eyebrow{color:var(--brine);}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
-.contact-info h3{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:500;color:var(--bone);margin-bottom:1rem;line-height:1.25;}
-.contact-info p{font-size:14px;color:var(--bone-mid);line-height:1.75;font-weight:300;margin-bottom:1.75rem;}
-.contact-details{display:flex;flex-direction:column;gap:0.6rem;margin-top:1.5rem;}
-.contact-detail{display:flex;gap:1rem;align-items:baseline;}
-.contact-detail span:first-child{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--brine);font-weight:500;min-width:80px;}
-.contact-detail span:last-child{font-size:13px;color:var(--bone-mid);}
-.company-form{background:rgba(232,228,220,0.04);border:1px solid rgba(61,107,101,0.3);border-radius:3px;padding:2.5rem;}
-.company-form h3{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:500;color:var(--bone);margin-bottom:1.5rem;}
-.cf-group{margin-bottom:1rem;}
-.cf-group label{display:block;font-size:11px;letter-spacing:0.07em;text-transform:uppercase;color:var(--bone-mid);font-weight:500;margin-bottom:5px;}
-.cf-group input,.cf-group select,.cf-group textarea{width:100%;background:rgba(232,228,220,0.07);border:1px solid rgba(232,228,220,0.15);border-radius:2px;padding:10px 14px;color:var(--bone);font-size:16px;font-family:'Inter',sans-serif;outline:none;transition:border-color 0.2s;-webkit-appearance:none;appearance:none;}
-.cf-group select option{background:var(--brine-deep);color:var(--bone);}
-.cf-group input:focus,.cf-group select:focus,.cf-group textarea:focus{border-color:var(--brine);}
-.cf-group textarea{resize:vertical;min-height:80px;}
-
-/* FOOTER */
-footer{background:var(--brine-deep);border-top:1px solid rgba(61,107,101,0.2);padding:2rem 2rem;}
-.footer-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
-.footer-logo{font-family:'Cormorant Garamond',serif;font-size:17px;color:var(--bone);font-weight:500;display:flex;align-items:center;gap:10px;}
-.footer-links{display:flex;gap:1.75rem;list-style:none;}
-.footer-links a{font-size:11px;color:var(--bone-mid);text-decoration:none;letter-spacing:0.07em;text-transform:uppercase;transition:color 0.2s;}
-.footer-links a:hover{color:var(--bone);}
-.footer-copy{font-size:11px;color:var(--bone-dark);}
-.footer-legal{font-size:11px;color:var(--bone-dark);font-style:italic;max-width:1200px;margin:1rem auto 0;padding:0.75rem 0 0;border-top:1px solid rgba(61,107,101,0.1);}
-
-
-
-</style>
-</head>
-<body>
-
-<!-- NAV -->
-<nav>
-  <div class="nav-inner">
-    <a href="#" class="logo-mark">
-      <svg class="logo-svg" width="36" height="36" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="2" y="4" width="26" height="26" stroke="#CFC9BE" stroke-width="1.8" rx="2.5"/>
-        <rect x="18" y="16" width="26" height="26" stroke="#8A9E9A" stroke-width="1.8" rx="2.5"/>
-        <rect x="18" y="16" width="10" height="14" fill="#8A9E9A" opacity="0.4" rx="1.5"/>
-      </svg>
-      <span class="logo-text">Venn People Co.</span>
-    </a>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="#companies">For Companies</a></li>
-      <li><a href="#individuals">For Individuals</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#cases">Case Studies</a></li>
-      <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
-    </ul>
-    <button class="hamburger" id="hamburger" aria-label="Open menu" onclick="toggleMenu()">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
-<div class="mobile-menu" id="mobile-menu">
-  <a href="#companies" onclick="closeMenu()">For Companies</a>
-  <a href="#individuals" onclick="closeMenu()">For Individuals</a>
-  <a href="#services" onclick="closeMenu()">Services</a>
-  <a href="#about" onclick="closeMenu()">About</a>
-  <a href="#cases" onclick="closeMenu()">Case Studies</a>
-  <a href="#contact" onclick="closeMenu()" style="color:var(--brine);">Get in Touch</a>
-</div>
-<script>
-function toggleMenu(){
-  var m=document.getElementById('mobile-menu');
-  var h=document.getElementById('hamburger');
-  m.classList.toggle('open');
-  h.classList.toggle('open');
-}
-function closeMenu(){
-  document.getElementById('mobile-menu').classList.remove('open');
-  document.getElementById('hamburger').classList.remove('open');
-}
-</script>
-
-<!-- HERO -->
-<section class="hero" id="home">
-  <div class="hero-inner">
-    <div>
-      <p class="hero-eyebrow">People · Operations · Enablement</p>
-      <h1>Strategy for your <em>organization.</em><br>Support for your <em>people.</em></h1>
-      <p class="hero-tagline">Where strategy and people meet.</p>
-      <p class="hero-sub">Venn People Co. brings executive-level people strategy, operational expertise, and learning capability to organizations and individuals — without the full-time cost.</p>
-      <div class="hero-btns">
-        <a href="#companies" class="btn-primary">For Organizations</a>
-        <a href="#individuals" class="btn-outline">For Individuals</a>
-      </div>
-    </div>
-    <div class="hero-right">
-      <a href="#companies" class="path-card">
-        <p class="path-label">Organizations</p>
-        <h3>Build stronger teams and systems.</h3>
-        <p>From fractional CHRO leadership to targeted projects — people strategy that scales with your growth.</p>
-        <span class="path-arrow" style="display:block;margin-top:0.5rem;">Get in touch →</span>
-      </a>
-      <a href="#individuals" class="path-card">
-        <p class="path-label">Individuals</p>
-        <h3>Navigate your workplace with confidence.</h3>
-        <p>Whether you're an employee in a difficult situation or an HR professional who needs a thought partner — we're in your corner.</p>
-        <span class="path-arrow">Explore →</span>
-      </a>
     </div>
   </div>
 </section>
 
-<!-- STATS -->
-<div class="stats-bar">
-  <div class="stats-inner">
-    <div><div class="stat-num">20+</div><div class="stat-label">Years Combined Experience</div></div>
-    <div><div class="stat-num">5</div><div class="stat-label">Industries Served</div></div>
-    <div><div class="stat-num">4</div><div class="stat-label">Global Regions</div></div>
-    <div><div class="stat-num">2</div><div class="stat-label">Senior Partners, Zero Overhead</div></div>
-  </div>
-</div>
-
-<!-- FOR COMPANIES -->
-<section id="companies">
+<!-- FOR INDIVIDUALS -->
+<section id="individuals">
   <div class="section-inner">
-    <p class="eyebrow">For Organizations</p>
-    <h2 class="section-title">The right level of partnership,<br>for where you are right now.</h2>
-    <p class="section-sub">We work with companies at every stage — from startups building their first people infrastructure to established teams navigating complex change.</p>
-    <div class="tiers-grid">
-      <div class="tier-card">
-        <div class="tier-icon"><svg viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
-        <h3>Ad Hoc Support</h3>
-        <p>Expert guidance on a specific situation. Fast, targeted, and actionable — when you need a senior perspective without the commitment.</p>
-        <ul class="tier-features">
-          <li>Same-week engagement</li>
-          <li>Single-issue scope</li>
-          <li>Written summary and recommendations</li>
-          <li>Flat-rate pricing</li>
-        </ul>
-        <a href="#contact" class="btn-dark">Get a Quote</a>
+    <p class="eyebrow">For Individuals</p>
+    <h2 class="section-title">You don't have to<br><em class="serif" style="font-style:italic;">figure it out alone.</em></h2>
+    <p class="section-sub">Whether you're an employee navigating a difficult workplace situation or an HR professional who needs a senior thought partner — we offer real guidance, not generic advice.</p>
+    <div class="ind-grid">
+      <div class="ind-card">
+        <p class="ind-tag">For Employees</p>
+        <h3>Navigating Workplace Situations</h3>
+        <p>A PIP you didn't see coming. A conflict with your manager. A negotiation you're not sure how to handle. We'll help you understand your options and move forward with confidence.</p>
+        <p class="ind-detail">Performance plans · Exit negotiations · Manager conflict · Career transitions</p>
       </div>
-      <div class="tier-card featured">
-        <div class="tier-badge">Most Popular</div>
-        <div class="tier-icon"><svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg></div>
-        <h3>Project-Based</h3>
-        <p>A defined scope with a clear outcome — org redesign, a new performance framework, a change initiative, or an enablement build.</p>
-        <ul class="tier-features">
-          <li>Scoped kickoff and discovery</li>
-          <li>Dedicated senior partner lead</li>
-          <li>Deliverables with implementation support</li>
-          <li>Milestone-based engagement</li>
-        </ul>
-        <a href="#contact" class="btn-dark">Get a Quote</a>
-      </div>
-      <div class="tier-card">
-        <div class="tier-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 10-16 0"/></svg></div>
-        <h3>Fractional CHRO</h3>
-        <p>An embedded senior people leader without the full-time cost. Strategic partnership at the executive level — present for the decisions that shape your organization.</p>
-        <ul class="tier-features">
-          <li>Ongoing monthly retainer</li>
-          <li>Seat at the leadership table</li>
-          <li>Full people strategy ownership</li>
-          <li>Scales with your headcount</li>
-        </ul>
-        <a href="#contact" class="btn-dark">Get a Quote</a>
+      <div class="ind-card">
+        <p class="ind-tag">For HR Professionals</p>
+        <h3>Senior Peer Consultation</h3>
+        <p>A complex investigation. An org design decision you're second-guessing. Get a senior HR thought partner who's been there — and can help you think it through.</p>
+        <p class="ind-detail">ER case strategy · Investigation support · Stakeholder navigation · Strategic HR counsel</p>
       </div>
     </div>
-    
+    <div class="ind-grid">
+      <div class="ind-card">
+        <p class="ind-tag">Ad Hoc</p>
+        <h3>One Question. Real Answer.</h3>
+        <p>Submit your situation and get a focused, actionable response from a senior people professional. No retainer, no commitment.</p>
+      </div>
+      <div class="ind-card">
+        <p class="ind-tag">Project-Based</p>
+        <h3>Support Through a Defined Situation</h3>
+        <p>For situations that unfold over time — we'll partner with you through to resolution.</p>
+      </div>
+    </div>
+    <div style="margin-top:2rem;text-align:center;">
       <a href="#contact" class="btn-primary">Get in Touch</a>
     </div>
   </div>
 </section>
-
-<!-- SERVICES -->
-<section id="services">
-  <div class="section-inner">
-    <p class="eyebrow">What We Do</p>
-    <h2 class="section-title">Nine areas of expertise.<br>One integrated team.</h2>
-    <p class="section-sub">Every engagement is led directly by a senior partner — no junior associates, no handoffs, no diluted output.</p>
-    <div class="services-grid">
-      <div class="service-item">
-        <p class="service-tag">Transformation</p>
-        <h3>Change Management</h3>
-        <p>Structured, human-centered approaches to transformation — mergers, reorgs, leadership transitions, and culture shifts. We lead the change, not just advise on it.</p>
-        <p class="service-lead">Led by Kasey</p>
-      </div>
-      <div class="service-item">
-        <p class="service-tag">Learning & Enablement</p>
-        <h3>Learning & Development</h3>
-        <p>Learning ecosystems that move the needle — onboarding design, competency modeling, manager enablement, and AI upskilling built for scale.</p>
-        <p class="service-lead">Led by Brogan</p>
-      </div>
-      <div class="service-item">
-        <p class="service-tag">Leadership</p>
-        <h3>Leadership Development</h3>
-        <p>Building leaders at every level — coaching, feedback culture, leadership presence, and development programs grounded in how real teams function.</p>
-        <p class="service-lead">Led jointly</p>
-      </div>
-      <div class="service-item">
-        <p class="service-tag">People Strategy</p>
-        <h3>Organizational Design</h3>
-        <p>Structuring teams and roles for clarity, efficiency, and growth — from startup org charts to complex multi-regional workforce models and succession planning.</p>
-        <p class="service-lead">Led by Kasey</p>
-      </div>
-      <div class="service-item">
-        <p class="service-tag">Employee Experience</p>
-        <h3>Employee Relations & Compliance</h3>
-        <p>Expert navigation of complex workplace dynamics — investigations, conflict resolution, performance issues, policy frameworks, and regulatory compliance including EEO and GDPR.</p>
-        <p class="service-lead">Led by Kasey</p>
-      </div>
-      <div class="service-item">
-        <p class="service-tag">Operations & Systems</p>
-        <h3>People Operations</h3>
-        <p>Building the infrastructure of a high-performing people function — HRIS selection, GTM readiness, global expansion, process design, and tech stack optimization.</p>
-        <p class="service-lead">Led by Brogan</p>
-      </div>
-      <div class="service-item">
-        <p class="service-tag">Talent</p>
-        <h3>Talent Acquisition</h3>
-        <p>Full-cycle recruiting strategy and execution for high-priority roles across technical, clinical, and operational domains.</p>
-        <p class="service-lead">Led by Kasey</p>
-      </div>
-      <div class="service-item">
-        <p class="service-tag">Global Expansion</p>
-        <h3>Global People Ops</h3>
-        <p>Expanding into new markets requires more than compliance. We've built people functions across EMEA, APAC, and the Americas — and know what breaks if you skip steps.</p>
-        <p class="service-lead">Led jointly</p>
-      </div>
-    </div></div>
-  </div>
-</section>
-
-
 
 <!-- ABOUT -->
 <section id="about">
@@ -894,7 +484,6 @@ function closeMenu(){
           <p class="team-title">Founder & Chief Learning Officer</p>
           <h3>Brogan Lozano</h3>
           <p class="team-creds">Global L&D & Operations Leader · People & Organizational Development</p>
-          
           <p class="team-bio">Brogan brings a rare combination of learning design, operations, and go-to-market expertise honed across global SaaS and fintech environments. She has led teams of 23, built learning ecosystems spanning four regions for organizations of hundreds, and driven measurable outcomes in onboarding, AI upskilling, and enablement.</p>
           <div class="expertise-tags">
             <span class="etag">L&D & Enablement</span>
@@ -950,7 +539,7 @@ function closeMenu(){
         <div class="case-body">
           <p class="case-label">The Challenge</p>
           <p>A mid-level manager received a PIP they believed was retaliatory. They needed an expert to help understand their rights and respond strategically.</p>
-          <p class="case-outcome">Client negotiated terms, documented performance, and transitioned to a senior role at a new company with a strong exit package.</p>
+          <p class="case-outcome">Client negotiated terms, documented performance, and transitioned to a senior role with a strong exit package.</p>
         </div>
       </div>
     </div>
@@ -962,94 +551,68 @@ function closeMenu(){
   <div class="section-inner">
     <p class="eyebrow">Get in Touch</p>
     <h2 class="section-title">Let's find your intersection.</h2>
-    <p class="section-sub">Organizations receive a complimentary 30-minute consultation. Individuals are welcome to reach out and we'll respond to every inquiry.</p>
+    <p class="section-sub">Whether you're an organization looking for people strategy support or an individual navigating a workplace situation — start here. We'll take it from there.</p>
 
-    <div style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-bottom:2rem;">
-      <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--bone-mid);font-weight:300;">
-        <span style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--brine);font-weight:500;">Based in</span>
-        Austin, TX — serving clients globally
-      </div>
-      <span style="color:var(--brine);opacity:0.4;">·</span>
-      <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--bone-mid);font-weight:300;">
-        <span style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--brine);font-weight:500;">Organizations</span>
-        Free 30-min consultation
-      </div>
-      <span style="color:var(--brine);opacity:0.4;">·</span>
-      <div style="display:flex;align-items:center;gap:8px;font-size:13px;color:var(--bone-mid);font-weight:300;">
-        <span style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--brine);font-weight:500;">Individuals</span>
-        Every inquiry answered personally
-      </div>
+    <div style="display:flex;gap:1.5rem;flex-wrap:wrap;margin-bottom:2.5rem;">
+      <div style="font-size:13px;color:var(--bone-mid);font-weight:300;"><span style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--brine);font-weight:500;margin-right:8px;">Based in</span>Austin, TX — serving clients globally</div>
+      <div style="font-size:13px;color:var(--bone-mid);font-weight:300;"><span style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--brine);font-weight:500;margin-right:8px;">Organizations</span>Free 30-min consultation</div>
+      <div style="font-size:13px;color:var(--bone-mid);font-weight:300;"><span style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--brine);font-weight:500;margin-right:8px;">Individuals</span>Every inquiry answered personally</div>
     </div>
 
-    <div class="contact-grid" style="grid-template-columns:1fr;">
-      <div class="company-form" style="max-width:640px;width:100%;">
-        <h3>Tell us about your situation</h3>
-        <p style="font-size:13px;color:var(--bone-mid);margin-bottom:1.25rem;font-weight:300;">Organizations receive a complimentary 30-minute consultation. All inquiries are responded to personally.</p>
-        <form id="unified-form" action="https://formspree.io/f/mwvgweza" method="POST">
-          <div class="cf-group">
-            <label>I am a / an...</label>
-            <select name="inquiry_type" required onchange="toggleFields(this.value)">
-              <option value="">Select one</option>
-              <option value="org_adhoc">An organization — Ad Hoc Support</option>
-              <option value="org_project">An organization — Project-Based Engagement</option>
-              <option value="org_chro">An organization — Fractional CHRO</option>
-              <option value="ind_employee">An individual — Employee navigating a situation</option>
-              <option value="ind_hr">An individual — HR professional seeking peer consultation</option>
-              <option value="unsure">Not sure yet — let's talk</option>
-            </select>
-          </div>
-          <div class="cf-group"><label>Your Name</label><input type="text" name="name" placeholder="Full name" required></div>
-          <div class="cf-group" id="company-field" style="display:none;"><label>Company / Organization</label><input type="text" name="company" placeholder="Where do you work?"></div>
-          <div class="cf-group"><label>Email</label><input type="email" name="email" placeholder="your@email.com" required></div>
-          <div class="cf-group"><label>Tell us more</label><textarea name="message" placeholder="Share as much or as little as you're comfortable with. All submissions are confidential." style="min-height:100px;resize:vertical;"></textarea></div>
-          <button id="unified-submit" class="btn-primary" type="submit" style="width:100%;text-align:center;">Send — We'll Be in Touch</button>
-          <div id="unified-success" style="display:none;margin-top:1rem;padding:1rem;background:rgba(61,107,101,0.15);border:1px solid rgba(61,107,101,0.4);border-radius:2px;">
-            <p style="font-size:13px;color:#8A9E9A;">Thank you — your submission is confidential and we'll be in touch soon.</p>
-          </div>
-          <div id="unified-error" style="display:none;margin-top:1rem;padding:1rem;background:rgba(180,60,60,0.1);border:1px solid rgba(180,60,60,0.3);border-radius:2px;">
-            <p style="font-size:13px;color:#c07a7a;">Something went wrong. Please email us directly at contact@vennpeopleco.com</p>
-          </div>
-          <p style="font-size:11px;color:var(--bone-dark);margin-top:1rem;font-style:italic;">This service does not constitute legal advice. All information shared is confidential.</p>
-        </form>
-        <script>
-        function toggleFields(val) {
-          var companyField = document.getElementById('company-field');
-          var isOrg = val.startsWith('org') || val === 'unsure';
-          companyField.style.display = isOrg ? 'flex' : 'none';
-        }
-        document.getElementById('unified-form').addEventListener('submit', async function(e) {
-          e.preventDefault();
-          var btn = document.getElementById('unified-submit');
-          var success = document.getElementById('unified-success');
-          var error = document.getElementById('unified-error');
-          btn.textContent = 'Sending...';
-          btn.disabled = true;
-          success.style.display = 'none';
-          error.style.display = 'none';
-          try {
-            var res = await fetch(this.action, {
-              method: 'POST',
-              body: new FormData(this),
-              headers: {'Accept': 'application/json'}
-            });
-            if (res.ok) {
-              success.style.display = 'block';
-              this.reset();
-              document.getElementById('company-field').style.display = 'none';
-            } else { throw new Error(); }
-          } catch(err) {
-            error.style.display = 'block';
-          }
-          btn.textContent = "Send — We'll Be in Touch";
-          btn.disabled = false;
-        });
-        </script>
-      </div>
+    <div class="company-form">
+      <h3>Tell us about your situation</h3>
+      <p>Organizations receive a complimentary 30-minute consultation. All inquiries are responded to personally.</p>
+      <form id="unified-form" action="https://formspree.io/f/mwvgweza" method="POST">
+        <div class="cf-group">
+          <label>I am a / an...</label>
+          <select name="inquiry_type" required onchange="toggleFields(this.value)">
+            <option value="">Select one</option>
+            <option value="org_adhoc">An organization — Ad Hoc Support</option>
+            <option value="org_project">An organization — Project-Based Engagement</option>
+            <option value="org_chro">An organization — Fractional CHRO</option>
+            <option value="ind_employee">An individual — Employee navigating a situation</option>
+            <option value="ind_hr">An individual — HR professional seeking peer consultation</option>
+            <option value="unsure">Not sure yet — let's talk</option>
+          </select>
+        </div>
+        <div class="cf-group"><label>Your Name</label><input type="text" name="name" placeholder="Full name" required></div>
+        <div class="cf-group" id="company-field" style="display:none;"><label>Company / Organization</label><input type="text" name="company" placeholder="Where do you work?"></div>
+        <div class="cf-group"><label>Email</label><input type="email" name="email" placeholder="your@email.com" required></div>
+        <div class="cf-group"><label>Tell us more</label><textarea name="message" placeholder="Share as much or as little as you're comfortable with. All submissions are confidential." style="min-height:100px;resize:vertical;"></textarea></div>
+        <button id="unified-submit" class="btn-primary" type="submit" style="width:100%;text-align:center;">Send — We'll Be in Touch</button>
+        <div id="unified-success" style="display:none;margin-top:1rem;padding:1rem;background:rgba(61,107,101,0.15);border:1px solid rgba(61,107,101,0.4);border-radius:2px;">
+          <p style="font-size:13px;color:#8A9E9A;">Thank you — your submission is confidential and we'll be in touch soon.</p>
+        </div>
+        <div id="unified-error" style="display:none;margin-top:1rem;padding:1rem;background:rgba(180,60,60,0.1);border:1px solid rgba(180,60,60,0.3);border-radius:2px;">
+          <p style="font-size:13px;color:#c07a7a;">Something went wrong. Please email us at contact@vennpeopleco.com</p>
+        </div>
+        <p style="font-size:11px;color:var(--bone-dark);margin-top:1rem;font-style:italic;">This service does not constitute legal advice. All information shared is confidential.</p>
+      </form>
     </div>
+    <script>
+    function toggleFields(val){
+      document.getElementById('company-field').style.display = (val.startsWith('org') || val === 'unsure') ? 'flex' : 'none';
+    }
+    document.getElementById('unified-form').addEventListener('submit', async function(e){
+      e.preventDefault();
+      var btn = document.getElementById('unified-submit');
+      var success = document.getElementById('unified-success');
+      var error = document.getElementById('unified-error');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+      success.style.display = 'none';
+      error.style.display = 'none';
+      try {
+        var res = await fetch(this.action, {method:'POST',body:new FormData(this),headers:{'Accept':'application/json'}});
+        if (res.ok) { success.style.display = 'block'; this.reset(); document.getElementById('company-field').style.display = 'none'; }
+        else { throw new Error(); }
+      } catch(err) { error.style.display = 'block'; }
+      btn.textContent = "Send — We'll Be in Touch";
+      btn.disabled = false;
+    });
+    </script>
   </div>
 </section>
-
-
 
 <!-- FOOTER -->
 <footer>
