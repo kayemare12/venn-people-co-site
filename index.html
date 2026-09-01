@@ -92,6 +92,10 @@ section{padding:100px 2rem;}
 .cf-group select option{background:var(--brine-deep);color:var(--bone);}
 .cf-group textarea{resize:vertical;min-height:90px;}
 
+.form-status{display:none;padding:12px 16px;border-radius:2px;font-size:13px;margin-bottom:1rem;line-height:1.5;}
+.form-status.success{display:block;background:rgba(61,107,101,0.3);border:1px solid var(--brine);color:var(--bone);}
+.form-status.error{display:block;background:rgba(180,60,60,0.2);border:1px solid #b43c3c;color:#f8d7da;}
+
 footer{background:var(--brine-deep);border-top:1px solid rgba(61,107,101,0.2);padding:2rem;}
 .footer-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
 .footer-logo{font-family:'Playfair Display',serif;font-size:17px;color:var(--bone);font-weight:500;display:flex;align-items:center;gap:10px;text-decoration:none;}
@@ -205,11 +209,14 @@ function closeMenu(){document.getElementById('mobile-menu').classList.remove('op
         <a href="https://calendar.app.google/arFPjAt5cDJa3GW87" target="_blank" rel="noopener" class="btn-primary" style="text-align:center;">Book a Call Now</a>
       </div>
 
-      <!-- General Contact Form via Formspree -->
+      <!-- General Contact Form via Formspree AJAX -->
       <div class="company-form">
         <h3>Send Us a Message</h3>
         <p>Preferred for individual inquiries, specific questions, or custom requests.</p>
-        <form action="https://formspree.io/f/mwvgweza" method="POST">
+        
+        <div id="form-status" class="form-status"></div>
+
+        <form id="contact-form" action="https://formspree.io/f/mwvgweza" method="POST">
           <div class="cf-group">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" required>
@@ -230,12 +237,58 @@ function closeMenu(){document.getElementById('mobile-menu').classList.remove('op
             <label for="msg">Message</label>
             <textarea id="msg" name="message" required></textarea>
           </div>
-          <button type="submit" class="btn-primary" style="width:100%;">Submit Message</button>
+          <button type="submit" id="submit-btn" class="btn-primary" style="width:100%;">Submit Message</button>
         </form>
       </div>
     </div>
   </div>
 </section>
+
+<script>
+  const form = document.getElementById("contact-form");
+  const status = document.getElementById("form-status");
+  const submitBtn = document.getElementById("submit-btn");
+
+  async function handleSubmit(event) {
+    event.preventDefault();
+    const data = new FormData(event.target);
+    
+    submitBtn.innerText = "Sending...";
+    submitBtn.disabled = true;
+
+    try {
+      const response = await fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        status.innerHTML = "Thank you for your message! We will be in touch soon.";
+        status.className = "form-status success";
+        form.reset();
+      } else {
+        const result = await response.json();
+        if (Object.hasOwn(result, 'errors')) {
+          status.innerHTML = result["errors"].map(error => error["message"]).join(", ");
+        } else {
+          status.innerHTML = "Oops! There was a problem submitting your form.";
+        }
+        status.className = "form-status error";
+      }
+    } catch (error) {
+      status.innerHTML = "Oops! There was a problem submitting your form.";
+      status.className = "form-status error";
+    } finally {
+      submitBtn.innerText = "Submit Message";
+      submitBtn.disabled = false;
+    }
+  }
+
+  form.addEventListener("submit", handleSubmit);
+</script>
 
 <footer>
   <div class="footer-inner">
@@ -258,7 +311,8 @@ function closeMenu(){document.getElementById('mobile-menu').classList.remove('op
   <div class="footer-legal">
     <div>
       <a href="privacy.html">Privacy Policy</a> &nbsp;|&nbsp; 
-      <a href="terms.html">Terms of Service</a>
+      <a href="terms.html">Terms of Service</a> &nbsp;|&nbsp;
+      <a href="https://www.linkedin.com/company/vennpeopleco" target="_blank" rel="noopener">LinkedIn</a>
     </div>
     <div>The content on this website is provided for informational purposes only and does not constitute legal advice, legal counsel, or an attorney-client relationship. Venn People Co., LLC is a human resources and people strategy consulting firm, not a law firm. For legal matters, please consult a licensed employment attorney in your jurisdiction.</div>
   </div>

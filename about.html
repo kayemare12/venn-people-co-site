@@ -74,7 +74,8 @@ section{padding:90px 2rem;}
 .team-single{max-width:900px;margin-top:2.5rem;}
 .team-card{background:var(--white);border:1px solid var(--border-light);border-radius:3px;overflow:hidden;display:grid;grid-template-columns:320px 1fr;}
 .team-photo-wrap{position:relative;height:100%;min-height:380px;background:var(--brine-deep);overflow:hidden;}
-.team-photo{width:100%;height:100%;object-fit:cover;object-position:center 15%;}
+.team-photo{width:100%;height:100%;object-fit:cover;object-position:center 15%;transition:transform 0.3s ease;}
+.team-photo-wrap:hover .team-photo{transform:scale(1.03);}
 .team-info{padding:2.25rem 2rem;}
 .team-photo-name{font-family:'Playfair Display',serif;font-size:28px;color:var(--brine-dark);font-weight:500;margin-bottom:0.25rem;}
 .team-photo-title{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--brine);margin-bottom:1.25rem;font-weight:500;}
@@ -203,12 +204,14 @@ function closeMenu(){document.getElementById('mobile-menu').classList.remove('op
     <div class="team-single">
       <div class="team-card">
         <div class="team-photo-wrap">
-          <img src="kasey-headshot1.jpeg" class="team-photo" alt="Kasey — Founder & Senior Partner">
+          <a href="https://www.linkedin.com/in/kasey-dudley/" target="_blank" rel="noopener" title="View Kasey's LinkedIn Profile">
+            <img src="kasey-headshot1.jpeg" class="team-photo" alt="Kasey — Founder & Senior Partner">
+          </a>
         </div>
         <div class="team-info">
-          <div class="team-photo-name">Kasey</div>
+          <div class="team-photo-name">Kasey M. Dudley, SPHR, GPHR, PHR</div>
           <div class="team-photo-title">Founder &amp; Principal Strategy Lead</div>
-          <p class="team-bio">Kasey is an executive People Operations and HR Leader with over 20 years of experience scaling organizations from early-stage startups to international enterprises. Having led global people functions, M&amp;A integrations, and operational turnarounds in tech, healthcare, and government sectors, she specializes in building compliant, scalable systems that preserve culture while driving profitability.</p>
+          <p class="team-bio">Kasey is an executive People Operations and HR Leader with extensive experience defining and executing organizational development strategies that drive talent acquisition, retention, and development at scale. Having led global people functions, M&amp;A integrations, and operational turnarounds in tech, healthcare, and government sectors, she specializes in building compliant, scalable systems that preserve culture while driving profitability.</p>
           <div class="expertise-tags">
             <span class="etag">Fractional CHRO</span>
             <span class="etag">Organizational Design</span>
@@ -257,7 +260,8 @@ function closeMenu(){document.getElementById('mobile-menu').classList.remove('op
   <div class="footer-legal">
     <div>
       <a href="privacy.html">Privacy Policy</a> &nbsp;|&nbsp; 
-      <a href="terms.html">Terms of Service</a>
+      <a href="terms.html">Terms of Service</a> &nbsp;|&nbsp;
+      <a href="https://www.linkedin.com/company/vennpeopleco" target="_blank" rel="noopener">LinkedIn</a>
     </div>
     <div>The content on this website is provided for informational purposes only and does not constitute legal advice, legal counsel, or an attorney-client relationship. Venn People Co., LLC is a human resources and people strategy consulting firm, not a law firm. For legal matters, please consult a licensed employment attorney in your jurisdiction.</div>
   </div>
