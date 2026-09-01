@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Venn People Co.</title>
+<meta name="description" content="Learn about Venn People Co. Founded by Kasey, we provide executive-level people strategy, HR leadership, and enablement for organizations and individuals in Austin, TX.">
+<meta property="og:title" content="About — Venn People Co.">
+<meta property="og:description" content="Where strategy and people meet. Meet the leadership behind Venn People Co.">
+<meta property="og:url" content="https://vennpeopleco.com/about.html">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bone:#E8E4DC;--bone-mid:#CFC9BE;--bone-dark:#9A9486;
+  --brine:#3D6B65;--brine-deep:#1E3A37;--brine-dark:#0D1E1C;
+  --linen:#F2EFE9;--white:#FFFFFF;
+  --text:#0D1E1C;--text-mid:#3D4A48;--text-muted:#7A8A88;
+  --border:#CFC9BE;--border-light:#E0DDD6;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;color:var(--text);background:var(--linen);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+.serif{font-family:'Playfair Display',serif;}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,30,28,0.97);backdrop-filter:blur(8px);border-bottom:1px solid rgba(61,107,101,0.25);}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 2rem;height:66px;display:flex;align-items:center;justify-content:space-between;}
+.logo-mark{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.logo-text{font-family:'Playfair Display',serif;font-size:19px;font-weight:500;color:var(--bone);letter-spacing:0.01em;}
+.logo-mark svg rect { transition: all 0.2s ease; }
+.logo-mark:hover svg rect:nth-child(1) { stroke: #FFFFFF; }
+.logo-mark:hover svg rect:nth-child(2) { stroke: #A3B5B1; }
+.logo-mark:hover svg rect:nth-child(3) { fill: #A3B5B1; opacity: 0.6; }
+.nav-links{display:flex;align-items:center;gap:2rem;list-style:none;}
+.nav-links a{color:var(--bone-mid);text-decoration:none;font-size:12px;font-weight:400;letter-spacing:0.07em;text-transform:uppercase;transition:color 0.2s;}
+.nav-links a:hover{color:var(--bone);}
+.nav-links a.active{color:var(--bone);font-weight:500;}
+.nav-cta{color:var(--brine) !important;border:1px solid rgba(61,107,101,0.6);padding:7px 18px;border-radius:2px;transition:background 0.2s,color 0.2s !important;}
+.nav-cta:hover{background:var(--brine) !important;color:var(--bone) !important;}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;}
+.hamburger span{display:block;width:22px;height:1.5px;background:var(--bone-mid);transition:all 0.25s;}
+.hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+.mobile-menu{display:none;position:fixed;top:66px;left:0;right:0;background:rgba(13,30,28,0.99);backdrop-filter:blur(8px);z-index:99;flex-direction:column;border-bottom:1px solid rgba(61,107,101,0.2);}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{padding:1rem 1.5rem;color:var(--bone-mid);text-decoration:none;font-size:13px;font-weight:400;letter-spacing:0.06em;text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,0.05);}
+
+.hero{background:var(--brine-dark);padding:140px 2rem 80px;position:relative;overflow:hidden;}
+.hero-inner{max-width:1200px;margin:0 auto;}
+.hero-eyebrow{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--brine);margin-bottom:1.25rem;font-weight:500;}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(40px,5vw,60px);font-weight:500;line-height:1.15;color:var(--bone);margin-bottom:1.5rem;}
+.hero h1 em{font-style:italic;color:var(--bone-mid);}
+.hero-sub{font-size:18px;color:var(--bone-mid);line-height:1.75;font-weight:300;max-width:720px;}
+
+section{padding:90px 2rem;}
+.section-inner{max-width:1200px;margin:0 auto;}
+.eyebrow{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--brine);margin-bottom:0.75rem;font-weight:500;}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(30px,4vw,42px);font-weight:500;line-height:1.2;color:var(--brine-dark);margin-bottom:1.5rem;}
+.section-body{font-size:16px;color:var(--text-mid);line-height:1.8;font-weight:300;max-width:800px;}
+.section-body p{margin-bottom:1.25rem;}
+
+#story{background:var(--linen);}
+#why-us{background:var(--bone);}
+#leadership{background:var(--linen);}
+
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem;}
+.why-card{background:var(--white);border:1px solid var(--border-light);padding:2.25rem 2rem;border-radius:3px;}
+.why-card h4{font-family:'Playfair Display',serif;font-size:22px;color:var(--brine-dark);margin-bottom:0.75rem;}
+.why-card p{font-size:14px;color:var(--text-mid);line-height:1.7;font-weight:300;}
+
+.team-single{max-width:900px;margin-top:2.5rem;}
+.team-card{background:var(--white);border:1px solid var(--border-light);border-radius:3px;overflow:hidden;display:grid;grid-template-columns:320px 1fr;}
+.team-photo-wrap{position:relative;height:100%;min-height:380px;background:var(--brine-deep);overflow:hidden;}
+.team-photo{width:100%;height:100%;object-fit:cover;object-position:center 15%;}
+.team-info{padding:2.25rem 2rem;}
+.team-photo-name{font-family:'Playfair Display',serif;font-size:28px;color:var(--brine-dark);font-weight:500;margin-bottom:0.25rem;}
+.team-photo-title{font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--brine);margin-bottom:1.25rem;font-weight:500;}
+.team-bio{font-size:14px;color:var(--text-mid);line-height:1.75;font-weight:300;margin-bottom:1.5rem;}
+.expertise-tags{display:flex;flex-wrap:wrap;gap:6px;}
+.etag{font-size:10px;background:rgba(61,107,101,0.1);color:var(--brine-deep);border:1px solid rgba(61,107,101,0.2);padding:4px 10px;border-radius:2px;font-weight:500;}
+
+.partner-note{background:rgba(61,107,101,0.06);border-left:3px solid var(--brine);padding:1.5rem 1.75rem;margin-top:2.5rem;border-radius:0 3px 3px 0;max-width:900px;}
+.partner-note h4{font-family:'Playfair Display',serif;font-size:18px;color:var(--brine-dark);margin-bottom:0.4rem;}
+.partner-note p{font-size:13px;color:var(--text-mid);line-height:1.65;font-weight:300;}
+
+#cta{background:var(--brine-dark);text-align:center;}
+#cta .section-title{color:var(--bone);}
+#cta .section-sub{color:var(--bone-mid);margin:0 auto 2rem;max-width:600px;}
+.btn-primary{background:var(--brine);color:var(--bone);padding:13px 30px;border:none;border-radius:2px;font-size:12px;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;text-decoration:none;display:inline-block;font-family:'DM Sans',sans-serif;}
+.btn-primary:hover{background:var(--brine-deep);}
+
+footer{background:var(--brine-deep);border-top:1px solid rgba(61,107,101,0.2);padding:2rem;}
+.footer-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
+.footer-logo{font-family:'Playfair Display',serif;font-size:17px;color:var(--bone);font-weight:500;display:flex;align-items:center;gap:10px;text-decoration:none;}
+.footer-logo svg rect { transition: all 0.2s ease; }
+.footer-logo:hover svg rect:nth-child(1) { stroke: #FFFFFF; }
+.footer-logo:hover svg rect:nth-child(2) { stroke: #A3B5B1; }
+.footer-logo:hover svg rect:nth-child(3) { fill: #A3B5B1; opacity: 0.6; }
+.footer-links{display:flex;gap:1.75rem;list-style:none;flex-wrap:wrap;}
+.footer-links a{font-size:11px;color:var(--bone-mid);text-decoration:none;letter-spacing:0.07em;text-transform:uppercase;}
+.footer-links a:hover{color:var(--bone);}
+.footer-copy{font-size:11px;color:var(--bone-dark);}
+.footer-legal{font-size:11px;color:var(--bone-dark);font-style:italic;max-width:1200px;margin:1rem auto 0;padding:0.75rem 0 0;border-top:1px solid rgba(61,107,101,0.1);display:flex;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;}
+.footer-legal a{color:var(--bone-mid);text-decoration:none;}
+.footer-legal a:hover{color:var(--bone);}
+
+@media(max-width:900px){
+  .hamburger{display:flex;}
+  .nav-links{display:none;}
+  .why-grid{grid-template-columns:1fr;}
+  .team-card{grid-template-columns:1fr;}
+  .team-photo-wrap{height:350px;}
+  section{padding:70px 1.5rem;}
+  .footer-inner, .footer-legal{flex-direction:column;text-align:center;}
+  .footer-links{justify-content:center;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo-mark">
+      <svg width="36" height="36" viewBox="0 0 48 48" fill="none">
+        <rect x="2" y="4" width="26" height="26" stroke="#CFC9BE" stroke-width="1.8" rx="2.5"/>
+        <rect x="18" y="16" width="26" height="26" stroke="#8A9E9A" stroke-width="1.8" rx="2.5"/>
+        <rect x="18" y="16" width="10" height="14" fill="#8A9E9A" opacity="0.4" rx="1.5"/>
+      </svg>
+      <span class="logo-text">Venn People Co.</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="for-organizations.html">For Organizations</a></li>
+      <li><a href="for-individuals.html">For Individuals</a></li>
+      <li><a href="index.html#contact" class="nav-cta">Get in Touch</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Open menu" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="about.html" onclick="closeMenu()">About</a>
+  <a href="for-organizations.html" onclick="closeMenu()">For Organizations</a>
+  <a href="for-individuals.html" onclick="closeMenu()">For Individuals</a>
+  <a href="index.html#contact" onclick="closeMenu()" style="color:var(--brine);">Get in Touch</a>
+</div>
+<script>
+function toggleMenu(){document.getElementById('mobile-menu').classList.toggle('open');document.getElementById('hamburger').classList.toggle('open');}
+function closeMenu(){document.getElementById('mobile-menu').classList.remove('open');document.getElementById('hamburger').classList.remove('open');}
+</script>
+
+<header class="hero">
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Who We Are</p>
+    <h1>Built to do work that <em>matters.</em></h1>
+    <p class="hero-sub">Where executive-level HR strategy meets genuine, human support. Venn People Co. was founded to bridge the gap between what organizations need to scale and what people need to thrive.</p>
+  </div>
+</header>
+
+<section id="story">
+  <div class="section-inner">
+    <p class="eyebrow">Our Story</p>
+    <h2 class="section-title">Why We Started</h2>
+    <div class="section-body">
+      <p>After more than two decades of leadership in people operations, change management, talent acquisition, and learning and development inside hypergrowth environments, I realized something fundamental: traditional corporate structures often force a choice between business strategy and human empathy.</p>
+      <p>I founded Venn People Co. to have the freedom to work directly with the clients, founders, teams, and individuals that matter. We aim to make a tangible difference in the workplace—building systems that scale without losing sight of the people who run them.</p>
+      <p>At its core, "Venn" represents the intersection where strategic business objectives and human potential meet. That intersection is where we operate every day.</p>
+    </div>
+  </div>
+</section>
+
+<section id="why-us">
+  <div class="section-inner">
+    <p class="eyebrow">Differentiators</p>
+    <h2 class="section-title">Why Hire Us Over a Traditional Firm?</h2>
+    <div class="why-grid">
+      <div class="why-card">
+        <h4>No Associates. No Handoffs.</h4>
+        <p>Big consultancies sell you senior partner pitch decks and hand your business off to junior associates. At Venn People Co., you work directly with executive leadership at every single touchpoint.</p>
+      </div>
+      <div class="why-card">
+        <h4>Operational Grounding</h4>
+        <p>We’ve run ops, managed P&amp;Ls, and led teams through hypergrowth. We build pragmatically—creating processes that accelerate your business rather than creating bureaucratic overhead.</p>
+      </div>
+      <div class="why-card">
+        <h4>Unfiltered Candor</h4>
+        <p>We don't sell generic templates or hide behind HR jargon. We give you straight answers, risk assessments, and actionable solutions that solve root problems immediately.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="leadership">
+  <div class="section-inner">
+    <p class="eyebrow">Leadership</p>
+    <h2 class="section-title">Meet the Founder</h2>
+    <p class="section-body">Executive leadership backed by a trusted network of specialized partners.</p>
+    
+    <div class="team-single">
+      <div class="team-card">
+        <div class="team-photo-wrap">
+          <img src="kasey-headshot1.jpeg" class="team-photo" alt="Kasey — Founder & Senior Partner">
+        </div>
+        <div class="team-info">
+          <div class="team-photo-name">Kasey</div>
+          <div class="team-photo-title">Founder &amp; Principal Strategy Lead</div>
+          <p class="team-bio">Kasey is an executive People Operations and HR Leader with over 20 years of experience scaling organizations from early-stage startups to international enterprises. Having led global people functions, M&amp;A integrations, and operational turnarounds in tech, healthcare, and government sectors, she specializes in building compliant, scalable systems that preserve culture while driving profitability.</p>
+          <div class="expertise-tags">
+            <span class="etag">Fractional CHRO</span>
+            <span class="etag">Organizational Design</span>
+            <span class="etag">Global People Ops</span>
+            <span class="etag">HR Compliance</span>
+            <span class="etag">Change Management</span>
+            <span class="etag">Executive Coaching</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="partner-note">
+      <h4>Dedicated Strategic Network</h4>
+      <p>While Kasey leads every client engagement directly, Venn People Co. collaborates with a select network of trusted senior partners, enablement specialists, and executive coaches to scale project delivery whenever specialized subject matter expertise is needed.</p>
+    </div>
+  </div>
+</section>
+
+<section id="cta">
+  <div class="section-inner">
+    <h2 class="section-title">Ready to build a stronger organization?</h2>
+    <p class="section-sub">Send us a message and we'll connect with you directly to evaluate how we can help.</p>
+    <a href="index.html#contact" class="btn-primary">Get in Touch</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <a href="index.html" class="footer-logo">
+      <svg width="24" height="24" viewBox="0 0 48 48" fill="none">
+        <rect x="2" y="4" width="26" height="26" stroke="#CFC9BE" stroke-width="1.8" rx="2.5"/>
+        <rect x="18" y="16" width="26" height="26" stroke="#8A9E9A" stroke-width="1.8" rx="2.5"/>
+        <rect x="18" y="16" width="10" height="14" fill="#8A9E9A" opacity="0.4" rx="1.5"/>
+      </svg>
+      <span>Venn People Co.</span>
+    </a>
+    <ul class="footer-links">
+      <li><a href="about.html">About</a></li>
+      <li><a href="for-organizations.html">For Organizations</a></li>
+      <li><a href="for-individuals.html">For Individuals</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <div class="footer-copy">&copy; 2026 Venn People Co., LLC. All rights reserved. Austin, TX.</div>
+  </div>
+  <div class="footer-legal">
+    <div>
+      <a href="privacy.html">Privacy Policy</a> &nbsp;|&nbsp; 
+      <a href="terms.html">Terms of Service</a>
+    </div>
+    <div>The content on this website is provided for informational purposes only and does not constitute legal advice, legal counsel, or an attorney-client relationship. Venn People Co., LLC is a human resources and people strategy consulting firm, not a law firm. For legal matters, please consult a licensed employment attorney in your jurisdiction.</div>
+  </div>
+</footer>
+
+</body>
+</html>
