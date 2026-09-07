@@ -79,10 +79,14 @@ section{padding:100px 2rem;}
 #contact .section-title{color:var(--bone);}
 #contact .section-sub{color:var(--bone-mid);}
 #contact .eyebrow{color:var(--brine);}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start;}
-.booking-card{background:rgba(232,228,220,0.04);border:1px solid rgba(61,107,101,0.3);border-radius:3px;padding:2.5rem;display:flex;flex-direction:column;justify-content:space-between;height:100%;}
-.booking-card h3{font-family:'Playfair Display',serif;font-size:24px;font-weight:500;color:var(--bone);margin-bottom:0.75rem;}
-.booking-card p{font-size:14px;color:var(--bone-mid);margin-bottom:2rem;font-weight:300;line-height:1.7;}
+
+/* Solution 2: Stacked Container Layout */
+.contact-stacked{display:flex;flex-direction:column;gap:2rem;max-width:900px;margin:0 auto;}
+
+.booking-banner{background:rgba(232,228,220,0.04);border:1px solid rgba(61,107,101,0.3);border-radius:3px;padding:2rem 2.5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;}
+.booking-banner-text h3{font-family:'Playfair Display',serif;font-size:22px;font-weight:500;color:var(--bone);margin-bottom:0.25rem;}
+.booking-banner-text p{font-size:14px;color:var(--bone-mid);font-weight:300;}
+
 .company-form{background:rgba(232,228,220,0.04);border:1px solid rgba(61,107,101,0.3);border-radius:3px;padding:2.5rem;}
 .company-form h3{font-family:'Playfair Display',serif;font-size:22px;font-weight:500;color:var(--bone);margin-bottom:0.5rem;}
 .company-form>p{font-size:13px;color:var(--bone-mid);margin-bottom:1.5rem;font-weight:300;}
@@ -114,7 +118,8 @@ footer{background:var(--brine-deep);border-top:1px solid rgba(61,107,101,0.2);pa
 @media(max-width:900px){
   .hamburger{display:flex;}
   .nav-links{display:none;}
-  .hero-inner, .contact-grid, .stats-inner{grid-template-columns:1fr;gap:2rem;}
+  .hero-inner, .stats-inner{grid-template-columns:1fr;gap:2rem;}
+  .booking-banner{flex-direction:column;text-align:center;}
   section{padding:70px 1.5rem;}
   .footer-inner, .footer-legal{flex-direction:column;text-align:center;}
   .footer-links{justify-content:center;}
@@ -194,19 +199,19 @@ function closeMenu(){document.getElementById('mobile-menu').classList.remove('op
 </div>
 
 <section id="contact">
-  <div class="section-inner">
+  <div class="section-inner" style="text-align:center;">
     <p class="eyebrow">Get in Touch</p>
     <h2 class="section-title">Let’s Start the Conversation</h2>
-    <p class="section-sub">Choose to book a free consultation directly or send us a message below.</p>
+    <p class="section-sub" style="margin-left:auto;margin-right:auto;">Book a free 30-minute consultation directly or send us a message below.</p>
     
-    <div class="contact-grid">
-      <!-- Organization Direct Booking Card -->
-      <div class="booking-card">
-        <div>
-          <h3>Book a Free Consultation</h3>
-          <p>For organizations looking for fractional leadership, project support, or strategic guidance. Schedule a 30-minute introductory call directly on our calendar.</p>
+    <div class="contact-stacked" style="text-align:left;">
+      <!-- Top Slim Booking Banner -->
+      <div class="booking-banner">
+        <div class="booking-banner-text">
+          <h3>Book a Free 30-Minute Consultation</h3>
+          <p>Schedule a call directly on our calendar to discuss fractional leadership or project support.</p>
         </div>
-        <a href="https://calendar.app.google/arFPjAt5cDJa3GW87" target="_blank" rel="noopener" class="btn-primary" style="text-align:center;">Book a Call Now</a>
+        <a href="https://calendar.app.google/arFPjAt5cDJa3GW87" target="_blank" rel="noopener" class="btn-primary" style="white-space:nowrap;">Schedule Call</a>
       </div>
 
       <!-- General Contact Form via Formspree AJAX -->
