@@ -80,7 +80,6 @@ section{padding:100px 2rem;}
 #contact .section-sub{color:var(--bone-mid);}
 #contact .eyebrow{color:var(--brine);}
 
-/* Solution 2: Stacked Container Layout */
 .contact-stacked{display:flex;flex-direction:column;gap:2rem;max-width:900px;margin:0 auto;}
 
 .booking-banner{background:rgba(232,228,220,0.04);border:1px solid rgba(61,107,101,0.3);border-radius:3px;padding:2rem 2.5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;}
@@ -140,8 +139,8 @@ footer{background:var(--brine-deep);border-top:1px solid rgba(61,107,101,0.2);pa
     </a>
     <ul class="nav-links">
       <li><a href="about.html">About</a></li>
-      <li><a href="for-organizations.html">For Organizations</a></li>
-      <li><a href="for-individuals.html">For Individuals</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="case-studies.html">Case Studies</a></li>
       <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Open menu" onclick="toggleMenu()">
@@ -151,8 +150,8 @@ footer{background:var(--brine-deep);border-top:1px solid rgba(61,107,101,0.2);pa
 </nav>
 <div class="mobile-menu" id="mobile-menu">
   <a href="about.html" onclick="closeMenu()">About</a>
-  <a href="for-organizations.html" onclick="closeMenu()">For Organizations</a>
-  <a href="for-individuals.html" onclick="closeMenu()">For Individuals</a>
+  <a href="services.html" onclick="closeMenu()">Services</a>
+  <a href="case-studies.html" onclick="closeMenu()">Case Studies</a>
   <a href="#contact" onclick="closeMenu()" style="color:var(--brine);">Get in Touch</a>
 </div>
 <script>
@@ -166,24 +165,24 @@ function closeMenu(){document.getElementById('mobile-menu').classList.remove('op
       <p class="hero-eyebrow">People · Operations · Enablement</p>
       <h1>Strategy for your <em>organization.</em><br>Support for your <em>people.</em></h1>
       <p class="hero-tagline">Where strategy and people meet.</p>
-      <p class="hero-sub">Venn People Co. brings executive-level people strategy, operational expertise, and learning capability to organizations and individuals, without the full-time cost.</p>
+      <p class="hero-sub">Venn People Co. brings executive-level people strategy, operational expertise, and learning capability to organizations, without the full-time cost.</p>
       <div class="hero-btns">
-        <a href="for-organizations.html" class="btn-primary">For Organizations</a>
-        <a href="for-individuals.html" class="btn-outline">For Individuals</a>
+        <a href="services.html" class="btn-primary">Explore Services</a>
+        <a href="#contact" class="btn-outline">Book Consultation</a>
       </div>
     </div>
     <div class="hero-right">
-      <a href="for-organizations.html" class="path-card">
-        <p class="path-label">Organizations</p>
-        <h3>Build stronger teams and systems.</h3>
-        <p>From on-demand thought partners to targeted projects, we deliver people strategy that scales with your growth.</p>
-        <span class="path-arrow">Explore Organizational Services →</span>
+      <a href="services.html#fractional" class="path-card">
+        <p class="path-label">Executive Leadership</p>
+        <h3>Fractional CHRO & Strategic Leadership</h3>
+        <p>Embedded senior people strategy to scale your business, align leadership teams, and protect your burn rate.</p>
+        <span class="path-arrow">Explore Fractional Leadership →</span>
       </a>
-      <a href="for-individuals.html" class="path-card">
-        <p class="path-label">Individuals</p>
-        <h3>Navigate your workplace with confidence.</h3>
-        <p>Whether you're an employee in a difficult situation or an HR professional who needs a thought partner, we're in your corner.</p>
-        <span class="path-arrow">Explore Individual Services →</span>
+      <a href="case-studies.html" class="path-card">
+        <p class="path-label">Proven Execution</p>
+        <h3>Client Outcomes & Case Studies</h3>
+        <p>Explore how executive strategy enabled 400% headcount growth while maintaining less than 5% attrition.</p>
+        <span class="path-arrow">View Case Studies →</span>
       </a>
     </div>
   </div>
@@ -191,10 +190,10 @@ function closeMenu(){document.getElementById('mobile-menu').classList.remove('op
 
 <div class="stats-bar">
   <div class="stats-inner">
-    <div><div class="stat-num">&lt;5%</div><div class="stat-label">Attrition through hypergrowth</div></div>
+    <div><div class="stat-num">&lt;5%</div><div class="stat-label">Key talent attrition through hypergrowth</div></div>
     <div><div class="stat-num">400%</div><div class="stat-label">Headcount scaling managed</div></div>
     <div><div class="stat-num">85%</div><div class="stat-label">Profitability increase via global expansion</div></div>
-    <div><div class="stat-num">20+</div><div class="stat-label">Years combined experience</div></div>
+    <div><div class="stat-num">20+</div><div class="stat-label">Years executive HR experience</div></div>
   </div>
 </div>
 
@@ -217,7 +216,7 @@ function closeMenu(){document.getElementById('mobile-menu').classList.remove('op
       <!-- General Contact Form via Formspree AJAX -->
       <div class="company-form">
         <h3>Send Us a Message</h3>
-        <p>Preferred for individual inquiries, specific questions, or custom requests.</p>
+        <p>Preferred for strategic inquiries, scope assessments, or custom partnership requests.</p>
         
         <div id="form-status" class="form-status"></div>
 
@@ -227,15 +226,15 @@ function closeMenu(){document.getElementById('mobile-menu').classList.remove('op
             <input type="text" id="name" name="name" required>
           </div>
           <div class="cf-group">
-            <label for="email">Email</label>
+            <label for="email">Work Email</label>
             <input type="email" id="email" name="email" required>
           </div>
           <div class="cf-group">
             <label for="type">Inquiry Type</label>
             <select id="type" name="inquiry_type">
-              <option value="org">Organization Services</option>
-              <option value="ind">Individual Guidance</option>
-              <option value="other">Other Inquiry</option>
+              <option value="fractional">Fractional CHRO / Retainer</option>
+              <option value="project">Project Sprint / Advisory</option>
+              <option value="other">General Inquiry</option>
             </select>
           </div>
           <div class="cf-group">
@@ -307,8 +306,8 @@ function closeMenu(){document.getElementById('mobile-menu').classList.remove('op
     </a>
     <ul class="footer-links">
       <li><a href="about.html">About</a></li>
-      <li><a href="for-organizations.html">For Organizations</a></li>
-      <li><a href="for-individuals.html">For Individuals</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="case-studies.html">Case Studies</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="footer-copy">&copy; 2026 Venn People Co., LLC. All rights reserved. Austin, TX.</div>
