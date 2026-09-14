@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Terms of Service — Venn People Co.</title>
-<meta name="description" content="Terms of Service for Venn People Co., LLC governing access and use of our website.">
+<meta name="description" content="Terms of Service for Venn People Co., LLC.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -46,37 +46,27 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(13,30,28,0.9
 .hero{background:var(--brine-dark);padding:140px 2rem 60px;position:relative;overflow:hidden;}
 .hero-inner{max-width:1200px;margin:0 auto;}
 .hero-eyebrow{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--brine);margin-bottom:1.25rem;font-weight:500;}
-.hero h1{font-family:'Playfair Display',serif;font-size:clamp(36px,4vw,50px);font-weight:500;line-height:1.15;color:var(--bone);margin-bottom:1rem;}
-.hero-sub{font-size:14px;color:var(--bone-mid);line-height:1.6;font-weight:300;}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(36px,4vw,52px);font-weight:500;line-height:1.15;color:var(--bone);margin-bottom:1rem;}
 
-section{padding:70px 2rem 100px;}
-.section-inner{max-width:900px;margin:0 auto;background:var(--white);padding:3rem 3rem;border:1px solid var(--border-light);border-radius:3px;}
-.policy-body h3{font-family:'Playfair Display',serif;font-size:22px;color:var(--brine-dark);margin:2rem 0 0.75rem;}
-.policy-body h3:first-child{margin-top:0;}
-.policy-body p, .policy-body ol{font-size:15px;color:var(--text-mid);line-height:1.75;font-weight:300;margin-bottom:1rem;}
-.policy-body ol{margin-left:1.5rem;}
-.policy-body li{margin-bottom:0.5rem;}
+section{padding:70px 2rem 90px;}
+.section-inner{max-width:900px;margin:0 auto;}
+.doc-content h2{font-family:'Playfair Display',serif;font-size:24px;color:var(--brine-dark);margin:2rem 0 1rem;}
+.doc-content p{font-size:15px;color:var(--text-mid);line-height:1.8;margin-bottom:1.25rem;font-weight:300;}
 
 footer{background:var(--brine-deep);border-top:1px solid rgba(61,107,101,0.2);padding:2rem;}
 .footer-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
 .footer-logo{font-family:'Playfair Display',serif;font-size:17px;color:var(--bone);font-weight:500;display:flex;align-items:center;gap:10px;text-decoration:none;}
-.footer-logo svg rect { transition: all 0.2s ease; }
-.footer-logo:hover svg rect:nth-child(1) { stroke: #FFFFFF; }
-.footer-logo:hover svg rect:nth-child(2) { stroke: #A3B5B1; }
-.footer-logo:hover svg rect:nth-child(3) { fill: #A3B5B1; opacity: 0.6; }
 .footer-links{display:flex;gap:1.75rem;list-style:none;flex-wrap:wrap;}
 .footer-links a{font-size:11px;color:var(--bone-mid);text-decoration:none;letter-spacing:0.07em;text-transform:uppercase;}
 .footer-links a:hover{color:var(--bone);}
 .footer-copy{font-size:11px;color:var(--bone-dark);}
 .footer-legal{font-size:11px;color:var(--bone-dark);font-style:italic;max-width:1200px;margin:1rem auto 0;padding:0.75rem 0 0;border-top:1px solid rgba(61,107,101,0.1);display:flex;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;}
 .footer-legal a{color:var(--bone-mid);text-decoration:none;}
-.footer-legal a:hover{color:var(--bone);}
 
 @media(max-width:900px){
   .hamburger{display:flex;}
   .nav-links{display:none;}
   section{padding:50px 1.5rem;}
-  .section-inner{padding:2rem 1.5rem;}
   .footer-inner, .footer-legal{flex-direction:column;text-align:center;}
   .footer-links{justify-content:center;}
 }
@@ -96,8 +86,8 @@ footer{background:var(--brine-deep);border-top:1px solid rgba(61,107,101,0.2);pa
     </a>
     <ul class="nav-links">
       <li><a href="about.html">About</a></li>
-      <li><a href="for-organizations.html">For Organizations</a></li>
-      <li><a href="for-individuals.html">For Individuals</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="case-studies.html">Case Studies</a></li>
       <li><a href="index.html#contact" class="nav-cta">Get in Touch</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Open menu" onclick="toggleMenu()">
@@ -107,8 +97,8 @@ footer{background:var(--brine-deep);border-top:1px solid rgba(61,107,101,0.2);pa
 </nav>
 <div class="mobile-menu" id="mobile-menu">
   <a href="about.html" onclick="closeMenu()">About</a>
-  <a href="for-organizations.html" onclick="closeMenu()">For Organizations</a>
-  <a href="for-individuals.html" onclick="closeMenu()">For Individuals</a>
+  <a href="services.html" onclick="closeMenu()">Services</a>
+  <a href="case-studies.html" onclick="closeMenu()">Case Studies</a>
   <a href="index.html#contact" onclick="closeMenu()" style="color:var(--brine);">Get in Touch</a>
 </div>
 <script>
@@ -118,47 +108,23 @@ function closeMenu(){document.getElementById('mobile-menu').classList.remove('op
 
 <header class="hero">
   <div class="hero-inner">
-    <p class="hero-eyebrow">Legal</p>
-    <h1>Terms of Service</h1>
-    <p class="hero-sub">Effective Date: September 1, 2026 &nbsp;|&nbsp; Last Updated: September 1, 2026</p>
+    <p class="hero-eyebrow">Legal Notice</p>
+    <h1>Terms of <em>Service</em></h1>
   </div>
 </header>
 
 <section>
-  <div class="section-inner">
-    <div class="policy-body">
-      <p>These Terms of Service ("Terms") govern your access to and use of the website at vennpeopleco.com (the "Site"), operated by Venn People Co., LLC. By accessing or using the Site, you agree to be bound by these Terms.</p>
+  <div class="section-inner doc-content">
+    <p>Last updated: 2026. By accessing or using the website of Venn People Co., LLC ("Venn People Co.," "we," "us," or "our"), you agree to be bound by these Terms of Service.</p>
 
-      <h3>1. Use of the Site</h3>
-      <p>You may use the Site for lawful purposes only. You agree not to use the Site in any way that: (a) violates any applicable law or regulation; (b) infringes intellectual property rights; (c) transmits harmful or disruptive content; or (d) attempts to gain unauthorized access to any part of the Site or our systems.</p>
+    <h2>Scope of Services</h2>
+    <p>Venn People Co., LLC provides executive human resources strategy, organizational development, and fractional people operations consulting. The information on this website is for informational purposes only and does not constitute formal consulting or advisory engagements until a written agreement is executed between both parties.</p>
 
-      <h3>2. Intellectual Property</h3>
-      <p>All content on the Site — including text, graphics, logos, images, and design — is the property of Venn People Co., LLC or its content partners and is protected by applicable intellectual property laws.</p>
+    <h2>No Legal Advice Disclaimer</h2>
+    <p>Venn People Co., LLC is a human resources and people strategy advisory firm, not a law firm. Content on this website or provided during initial consultations does not constitute legal counsel, formal legal representation, or an attorney-client relationship. For employment law matters, please consult a licensed employment attorney in your jurisdiction.</p>
 
-      <h3>3. No Professional Advice</h3>
-      <p>The content on this Site is for general informational purposes only and does not constitute legal, financial, employment, or other professional advice. Venn People Co., LLC is an HR consulting firm, not a law firm.</p>
-
-      <h3>4. Third-Party Links</h3>
-      <p>The Site may contain links to third-party websites provided for convenience only. We do not control, endorse, or assume responsibility for third-party content.</p>
-
-      <h3>5. Disclaimers</h3>
-      <p>THE SITE AND ITS CONTENT ARE PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED.</p>
-
-      <h3>6. Limitation of Liability</h3>
-      <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, VENN PEOPLE CO., LLC AND ITS PARTNERS SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING FROM YOUR USE OF THE SITE.</p>
-
-      <h3>7. Indemnification</h3>
-      <p>You agree to indemnify and hold harmless Venn People Co., LLC, its partners, and affiliates from any claims, damages, losses, or expenses arising from: (a) your use of the Site; (b) your violation of these Terms; or (c) your violation of any third-party rights.</p>
-
-      <h3>8. Governing Law &amp; Dispute Resolution</h3>
-      <p>These Terms are governed by the laws of the State of Texas. Disputes shall be resolved by binding arbitration in Austin, Texas under AAA rules. You waive any right to a jury trial or class action proceeding.</p>
-
-      <h3>9. Changes to These Terms</h3>
-      <p>We reserve the right to update these Terms at any time. Continued use of the Site after changes are posted constitutes acceptance.</p>
-
-      <h3>10. Contact</h3>
-      <p>Questions? Contact us at: Venn People Co., LLC | Austin, Texas | contact@vennpeopleco.com</p>
-    </div>
+    <h2>Intellectual Property</h2>
+    <p>All content, branding, logo designs, text, and strategic framework descriptions on this website are the property of Venn People Co., LLC and protected under copyright laws.</p>
   </div>
 </section>
 
@@ -174,8 +140,8 @@ function closeMenu(){document.getElementById('mobile-menu').classList.remove('op
     </a>
     <ul class="footer-links">
       <li><a href="about.html">About</a></li>
-      <li><a href="for-organizations.html">For Organizations</a></li>
-      <li><a href="for-individuals.html">For Individuals</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="case-studies.html">Case Studies</a></li>
       <li><a href="index.html#contact">Contact</a></li>
     </ul>
     <div class="footer-copy">&copy; 2026 Venn People Co., LLC. All rights reserved. Austin, TX.</div>
